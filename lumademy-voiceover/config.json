@@ -2,14 +2,13 @@
   "voiceId": "1y3zklL6pe69e1FEDKBo",
   "model": "eleven_v4",
   "voiceSettings": {
-    "stability": 0.45,
-    "similarity_boost": 0.8,
-    "speed": 1.08
+    "stability": 0.4,
+    "similarity_boost": 0.8
   },
-  "tempo": 1.0,
+  "tempo": 1.2,
   "fps": 30,
-  "leadSeconds": 0.8,
-  "tailSeconds": 0.9,
+  "leadSeconds": 0.5,
+  "tailSeconds": 0.5,
   "width": 1920,
   "height": 1080
 }

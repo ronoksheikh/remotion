@@ -34,9 +34,8 @@ only edited slide text is regenerated.
 
 | key | meaning |
 |---|---|
-| `voiceSettings.speed` | 1.0 = normal. 1.08 is brisk but clear. Try 1.12 for faster. |
+| `tempo` | real pace control (ffmpeg, keeps pitch). 1.0 = normal, 1.2 = fast and still clear, up to ~1.3. ElevenLabs `speed` has almost no effect, so it is not used. |
 | `voiceSettings.stability` | lower = more expressive, higher = more even |
-| `tempo` | optional ffmpeg speed-up applied on top (keep 1.0 unless needed) |
 | `leadSeconds` / `tailSeconds` | pause before the voice starts / after it ends on each slide |
 
 ## Editing narration and cues (`lessons/<lesson>/narration.json`)

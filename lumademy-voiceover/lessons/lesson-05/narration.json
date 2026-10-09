@@ -1,12 +1,12 @@
 {
  "slides": [
   {
+   "text": "আসসালামু আলাইকুম! আজ থেকে Part B শুরু, আর honestly, এটা এই পুরো course-এর সবচেয়ে কাজের class-গুলোর একটা। Part A-তে আমরা শিখেছি A.I. ভেতরে কীভাবে build করে। এখন শিখব, কীভাবে বললে A.I. আপনাকে সবচেয়ে ভালো output দেবে। আজকের কথা একটাই: prompt যত clear, output তত ভালো।",
    "cues": [
     {
      "at": "Part B",
      "sel": ".chip",
-     "anchor": "br",
-     "dur": 2.8
+     "dur": 2.5
     },
     {
      "at": "এখন শিখব",
@@ -23,9 +23,10 @@
    ]
   },
   {
+   "text": "দুটো prompt পাশাপাশি দেখুন। বাঁয়ে বলা হয়েছে: একটা সুন্দর logo বানাও। এখন A.I. কী করবে? Guess করবে! কোন color, কত বড়, কীভাবে move করবে, কিচ্ছু জানে না। তাই result হয় ফ্যাকাশে, একদম generic। এবার ডানের prompt দেখুন। একটু বড়, কিন্তু প্রতিটা অংশ clear: কী বানাতে হবে, size কত, color কী, আর motion কেমন। ফলটা দেখুন, ঠিক যেমনটা চেয়েছিলাম! মনে রাখবেন, difference A.I.-র নয়, prompt-এর।",
    "sync": [
     {
-     "t": 2.0,
+     "t": 1.6,
      "tl": 1.6
     },
     {
@@ -40,13 +41,13 @@
      "dur": 2
     },
     {
-     "at": "AI কী করবে",
+     "at": "A.I. কী করবে",
      "sel": ".vl .vp",
      "anchor": "br",
      "dur": 3
     },
     {
-     "at": "তাই ফলাফল ফ্যাকাশে",
+     "at": "তাই result",
      "sel": ".vl svg",
      "anchor": "center",
      "dur": 3
@@ -64,7 +65,7 @@
      "dur": 3.5
     },
     {
-     "at": "পার্থক্যটা",
+     "at": "মনে রাখবেন",
      "sel": ".cap",
      "anchor": "br",
      "dur": 4
@@ -72,9 +73,10 @@
    ]
   },
   {
+   "text": "একটা ভালো prompt-এ থাকে পাঁচটা part। আর good news, এর তিনটা আপনি আগেই শিখে ফেলেছেন! এক: Goal, মানে কী বানাচ্ছেন, আর কার জন্য। দুই: Size, মানে YouTube-এর জন্য নাকি Reel-এর জন্য, কত second, কত fps। এটা আমরা Lesson 4-এ শিখেছি। তিন: Look, মানে color, font আর style, যেটা Lesson 2-এ দেখেছেন। চার: Motion, smooth নাকি snappy নাকি bouncy, আর কত second। এটা Lesson 3-এর। আর পাঁচ: Limits, মানে কী করা যাবে না, আর শেষে কেমন file চান।",
    "cues": [
     {
-     "at": "ভালো prompt-এ পাঁচটা",
+     "at": "একটা ভালো prompt-এ",
      "sel": ".ttl",
      "anchor": "br",
      "dur": 3
@@ -90,7 +92,7 @@
      "dur": 3
     },
     {
-     "at": "এটা চার নম্বর",
+     "at": "Lesson 4-এ",
      "sel": ".cs .lc:nth-child(2) .tag",
      "anchor": "center",
      "dur": 2.5,
@@ -102,7 +104,7 @@
      "dur": 3
     },
     {
-     "at": "যেটা দুই নম্বর",
+     "at": "Lesson 2-এ",
      "sel": ".cs .lc:nth-child(3) .tag",
      "anchor": "center",
      "dur": 2.5,
@@ -114,7 +116,7 @@
      "dur": 3
     },
     {
-     "at": "এটা তিন নম্বর",
+     "at": "Lesson 3-এর",
      "sel": ".cs .lc:nth-child(4) .tag",
      "anchor": "center",
      "dur": 2.5,
@@ -128,66 +130,67 @@
    ]
   },
   {
+   "text": "এবার দেখুন, prompt কীভাবে step by step ভালো হয়। প্রথমে শুধু Goal: logo reveal বানাও। A.I. দিল একটা সাধারণ গোল। এরপর Size যোগ করলাম, frame একদম ঠিক হলো। তারপর Look, নীল color আর letter এসে গেল। এবার Motion যোগ করলাম, দেখুন রেখাটা আঁকা হয়ে logo-তে প্রাণ এল। আর একদম শেষে Limits: শুধু একটা file চাই। প্রতিটা part যোগ হতেই output আপনার চাওয়ার আরও কাছে এল।",
    "sync": [
     {
-     "t": 2.0,
+     "t": 1.6,
      "tl": 1.6
     },
     {
-     "at": "প্রথম অংশ",
+     "at": "প্রথমে শুধু Goal",
      "tl": 1.68
     },
     {
-     "at": "মাপ যোগ",
+     "at": "Size যোগ",
      "tl": 3.28
     },
     {
-     "at": "চেহারা যোগ",
+     "at": "তারপর Look",
      "tl": 5.18
     },
     {
-     "at": "গতি যোগ",
+     "at": "Motion যোগ",
      "tl": 7.08
     },
     {
-     "at": "সীমা, মানে",
+     "at": "Limits",
      "tl": 8.88
     }
    ],
    "cues": [
     {
-     "at": "প্রথম অংশ",
+     "at": "প্রথমে শুধু Goal",
      "sel": "#bp0",
      "dur": 4
     },
     {
-     "at": "AI একটা সাধারণ গোল",
+     "at": "A.I. দিল",
      "sel": ".R svg",
      "anchor": "center",
      "dur": 2.5
     },
     {
-     "at": "মাপ যোগ",
+     "at": "Size যোগ",
      "sel": "#bp1",
      "dur": 4
     },
     {
-     "at": "চেহারা যোগ",
+     "at": "তারপর Look",
      "sel": "#bp2",
      "dur": 4
     },
     {
-     "at": "গতি যোগ",
+     "at": "Motion যোগ",
      "sel": "#bp3",
      "dur": 4
     },
     {
-     "at": "সীমা, মানে",
+     "at": "Limits",
      "sel": "#bp4",
      "dur": 3.5
     },
     {
-     "at": "প্রতিটা অংশ যোগ",
+     "at": "প্রতিটা part",
      "sel": ".R",
      "anchor": "center",
      "dur": 6
@@ -195,9 +198,10 @@
    ]
   },
   {
+   "text": "আর এই হলো আপনার ready-made template! প্রতিবার নতুন করে ভাবতে হবে না, শুধু ফাঁকা জায়গাগুলো fill করুন, আর A.I.-কে দিন। এখনই একটা screenshot নিয়ে রাখুন, সত্যিই কাজে লাগবে। আর একটা pro tip: সুন্দর বা modern-এর মতো vague word বাদ দিন। বলুন specific: কোন color, কোন font, কত second। এই ছোট্ট অভ্যাসেই আপনার output আলাদা হয়ে যাবে। পরের class-গুলোতে প্রতিটা part গভীরে শিখব, শুরু হবে Look, মানে design দিয়ে।",
    "cues": [
     {
-     "at": "এবার আপনার জন্য",
+     "at": "ready-made template",
      "sel": ".W2",
      "anchor": "br",
      "dur": 3
@@ -209,13 +213,25 @@
      "dur": 4
     },
     {
-     "at": "স্ক্রিনশট",
+     "at": "screenshot",
      "sel": ".W2",
      "anchor": "br",
-     "dur": 4
+     "dur": 3.5
     },
     {
-     "at": "বিশেষ করে চেহারা",
+     "at": "কোন color",
+     "sel": ".W2 .rw:nth-child(3)",
+     "anchor": "br",
+     "dur": 3
+    },
+    {
+     "at": "কত second",
+     "sel": ".W2 .rw:nth-child(4)",
+     "anchor": "br",
+     "dur": 3
+    },
+    {
+     "at": "শুরু হবে Look",
      "sel": ".W2 .rw:nth-child(3)",
      "anchor": "br",
      "dur": 5
@@ -223,24 +239,25 @@
    ]
   },
   {
+   "text": "তাহলে আজ কী শিখলাম? এক: prompt যত clear, output তত ভালো। দুই: পাঁচটা part, Goal, Size, Look, Motion আর Limits। আর তিন: একটা template, যেটা সবসময় কাজে লাগবে। Next class-এ শিখব Look-এর জন্য কী কী বলতে হয়: layout, font আর color। দেখা হবে!",
    "cues": [
     {
-     "at": "prompt যত পরিষ্কার",
+     "at": "prompt যত clear",
      "sel": ".cs .lc:nth-child(1)",
      "dur": 4
     },
     {
-     "at": "পাঁচটা অংশ",
+     "at": "পাঁচটা part",
      "sel": ".cs .lc:nth-child(2)",
      "dur": 4
     },
     {
-     "at": "আর একটা ছক",
+     "at": "একটা template",
      "sel": ".cs .lc:nth-child(3)",
      "dur": 3
     },
     {
-     "at": "পরের ক্লাসে",
+     "at": "Next class",
      "sel": ".nx",
      "anchor": "br",
      "dur": 6
