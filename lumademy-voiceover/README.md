@@ -18,6 +18,17 @@ cp .env.example .env                # then put your ElevenLabs key in .env
 ```
 Needs Node 18+ and ffmpeg/ffprobe on PATH (`ffmpeg -version`).
 
+## Lessons in this repo
+
+`lessons/lesson-01-three-layers` ... `lesson-04-code-to-video` (Module 1) and `lesson-05` (Module 2).
+Each folder has `slides.html` (the slideshow), `script.md` (the original script) and `narration.json` (what the voice says + cues).
+
+Render a whole module:
+```bash
+./run-module.sh lesson-01-three-layers lesson-02-reading-ai-logo lesson-03-time-and-easing lesson-04-code-to-video
+```
+Videos land in `output/<lesson-folder>.mp4`.
+
 ## Build
 
 ```bash
@@ -53,6 +64,9 @@ Slide text comes from `say` in `slides.html`. To change what is spoken for a sli
   `dur` = seconds the highlight stays, `pad` = ring padding, `shift` = seconds earlier/later (default -0.1).
 - `sync[]` (optional): maps a spoken phrase (or absolute `t` seconds) to a moment `tl` in the slide's own
   animation timeline, so animations land on the words.
+
+To find selectors and animation timings for a slide, run `node inspect.mjs lessons/<lesson> [slideNumber]`
+(it lists every element with its position and the slide's animation timeline).
 
 For a new lesson: copy the folder, replace `slides.html`, write its `narration.json`, run `npm run plan`
 (it warns if a phrase or selector is not found), then build.

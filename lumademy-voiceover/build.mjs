@@ -186,7 +186,7 @@ async function main() {
   };
 
   const first = await mkPage();
-  const says = await first.evaluate(() => L.scenes.map((s) => s.say));
+  const says = await first.evaluate(() => (typeof L !== 'undefined' ? L.scenes.map((s) => s.say) : SAY));
   const N = says.length;
   console.log(`\n${name}: ${N} slides, model ${cfg.model}, voice ${cfg.voiceId}\n`);
 

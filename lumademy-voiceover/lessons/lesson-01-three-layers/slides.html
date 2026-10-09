@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lesson 01 · How AI Really Builds Motion Graphics</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* BRAND: change these 4 values once to restyle every slide */
+:root{--b1:#1659F5;--b2:#3FA2FF;--ink:#0B1F4D;--acc:#FFD84D;--mono:ui-monospace,Menlo,Consolas,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--b1);overflow:hidden;color:#fff;font-family:'Hind Siliguri','Noto Sans Bengali',system-ui,sans-serif}
+#stage{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;background:linear-gradient(135deg,var(--b1),var(--b2));overflow:hidden}
+.scene{position:absolute;inset:0;display:none}.scene.on{display:block}
+.scene>*{position:absolute}
+.card{background:#fff;color:var(--ink);border-radius:44px;box-shadow:0 30px 80px rgba(7,30,110,.35)}
+.chip{background:rgba(255,255,255,.22);border-radius:99px;padding:10px 30px;font:600 30px 'Space Grotesk',sans-serif;letter-spacing:.06em}
+h1{font:700 104px/1.08 'Space Grotesk','Hind Siliguri',sans-serif}
+.ttl{left:140px;top:105px;font:700 74px/1.2 'Hind Siliguri',sans-serif}
+.bn{font-size:48px;line-height:1.5}
+.cap{left:140px;font-size:48px;font-weight:600}
+.orb{border-radius:50%;background:rgba(255,255,255,.16)}
+#o1{width:520px;height:520px;right:120px;top:140px}#o2{width:300px;height:300px;right:520px;top:560px;background:rgba(255,255,255,.24)}#o3{width:150px;height:150px;right:150px;top:700px;background:#fff}
+#chip0{left:140px;top:150px}#h0{left:140px;top:250px;width:1200px}#p0{left:140px;top:610px;width:1100px}
+/* scene 1 */
+#chat{left:140px;top:210px;width:820px;height:520px;padding:50px}
+.lbl{font:600 30px 'Hind Siliguri';color:var(--b1);margin-bottom:24px}
+#typed{font:500 46px/1.5 'Space Grotesk',sans-serif}
+#res{left:1020px;top:210px;width:760px;height:520px;padding:30px 40px}
+#res svg{width:100%;height:100%}
+#cap1{top:800px}
+/* scene 2 */
+.lc{top:330px;width:500px;height:470px;padding:50px 46px}
+#lc1{left:140px}#lc2{left:710px}#lc3{left:1280px}
+.num{width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,var(--b1),var(--b2));color:#fff;font:700 46px/84px 'Space Grotesk';text-align:center}
+.lc h2{font:700 70px 'Space Grotesk';margin:30px 0 4px}
+.lc p{font-size:46px;font-weight:600;color:var(--b1)}
+.lc small{display:block;font-size:34px;margin-top:10px;opacity:.75}
+.tag{display:inline-block;margin-top:34px;background:var(--ink);color:#fff;border-radius:99px;padding:6px 26px;font:600 32px 'Space Grotesk'}
+/* scene 3 */
+#shapeCard{left:140px;top:230px;width:700px;height:600px;padding:20px}
+#shapeCard svg{width:100%;height:100%}
+#codeCard{left:900px;top:230px;width:880px;height:600px;padding:56px}
+.row{display:flex;align-items:baseline;gap:34px;margin-bottom:44px;font-family:var(--mono);font-size:56px}
+.row b{color:var(--b1)}.row span{font:600 38px 'Hind Siliguri';color:#E8590C}
+#cap3{top:890px}
+/* scene 4 */
+#codeLine{left:140px;top:270px;width:1640px;height:310px;display:flex;align-items:center;justify-content:center;font:500 58px var(--mono)}
+.tok{position:relative;border-bottom:8px solid;padding-bottom:4px;margin:0 4px}
+.tok i{position:absolute;left:0;top:100%;margin-top:26px;font:600 40px 'Hind Siliguri';white-space:nowrap}
+.t1{color:var(--b1)}.t2{color:#E8590C}.t3{color:#12A150}
+#trk{left:140px;top:660px;width:1640px;height:180px}
+#trk:before{content:"";position:absolute;left:50px;right:50px;top:88px;height:6px;border-radius:3px;background:#D6E6FF}
+.dotb{position:absolute;width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--b1),var(--b2));top:59px;left:50px}
+#cap4{top:890px}
+/* scene 5 */
+#tl5{left:140px;top:250px;width:1640px;height:260px}
+#tl5:before{content:"";position:absolute;left:100px;right:100px;top:127px;height:6px;border-radius:3px;background:#D6E6FF}
+#dot5{left:100px;top:98px}
+#rdrow{left:140px;top:560px;display:flex;align-items:baseline;gap:30px}
+#rdrow em{font:600 44px 'Space Grotesk';font-style:normal;opacity:.85}
+#rd{font:700 150px/1 var(--mono)}
+#sl{left:760px;top:650px;width:1000px;accent-color:#fff;height:40px;cursor:pointer}
+#st5{left:140px;top:830px;width:1640px}
+/* scene 6 */
+.pill{top:330px;width:500px;height:230px;padding:36px 40px;font-size:44px;font-weight:600;line-height:1.35}
+.pill b{display:block;font:700 56px 'Space Grotesk';color:var(--b1)}
+#pl1{left:140px}#pl2{left:710px}#pl3{left:1280px}
+#next{left:140px;top:690px;width:1640px;height:200px;padding:36px 60px}
+#next small{font:600 34px 'Hind Siliguri';color:var(--b1)}
+#next h2{font:700 70px 'Space Grotesk'}
+/* chrome */
+#brand{left:140px;bottom:44px;position:absolute;font:700 38px 'Space Grotesk';display:flex;align-items:center;gap:14px}
+#brand:before{content:"";width:22px;height:22px;border-radius:50%;background:#fff}
+#info{right:140px;bottom:50px;position:absolute;font:500 28px 'Space Grotesk';opacity:.8}
+#dots{position:absolute;left:50%;bottom:52px;transform:translateX(-50%);display:flex;gap:14px}
+#dots b{width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,.35);transition:.3s}
+#dots b.on{background:#fff;width:42px;border-radius:8px}
+</style>
+</head>
+<body>
+<div id="stage">
+<!-- 0 Title -->
+<section class="scene" id="s0">
+ <div class="orb" id="o1"></div><div class="orb" id="o2"></div><div class="orb" id="o3"></div>
+ <span class="chip a" id="chip0">LESSON 01 · FOUNDATION</span>
+ <h1 class="a" id="h0">How AI Really Builds Motion Graphics</h1>
+ <p class="bn a" id="p0">AI আসলে কীভাবে বানায়? মাত্র ৩টা স্তরের গল্প।</p>
+</section>
+<!-- 1 Hook -->
+<section class="scene" id="s1">
+ <h2 class="ttl a">একটা prompt, এক মিনিট</h2>
+ <div class="card a" id="chat"><div class="lbl">আপনি লিখলেন</div><div id="typed"></div></div>
+ <div class="card a" id="res">
+  <svg viewBox="0 0 400 360"><circle id="ring" cx="200" cy="170" r="110" fill="none" stroke="#1659F5" stroke-width="16" stroke-linecap="round" stroke-dasharray="692" stroke-dashoffset="692" transform="rotate(-90 200 170)"/><circle id="fillc" cx="200" cy="170" r="0" fill="#1659F5"/><text id="ltr" x="200" y="212" text-anchor="middle" font-size="120" font-weight="700" fill="#fff" font-family="Space Grotesk,sans-serif" opacity="0">L</text><text x="200" y="335" text-anchor="middle" font-size="28" fill="#0B1F4D" font-family="Hind Siliguri,sans-serif">AI বানাল</text></svg>
+ </div>
+ <p class="cap" id="cap1">১ মিনিটেই তৈরি! কিন্তু ভেতরে আসলে কী ঘটল?</p>
+</section>
+<!-- 2 Three layers -->
+<section class="scene" id="s2">
+ <h2 class="ttl a">ভেতরে আছে মাত্র ৩টা স্তর</h2>
+ <div class="card lc a" id="lc1"><div class="num">1</div><h2>Shape</h2><p>আকার</p><small>কী দেখা যাবে</small><span class="tag">SVG</span></div>
+ <div class="card lc a" id="lc2"><div class="num">2</div><h2>Code</h2><p>নির্দেশ</p><small>কী করতে হবে</small><span class="tag">JS + GSAP</span></div>
+ <div class="card lc a" id="lc3"><div class="num">3</div><h2>Time</h2><p>সময়</p><small>কখন, কত দ্রুত</small><span class="tag">Timeline</span></div>
+</section>
+<!-- 3 Shape -->
+<section class="scene" id="s3">
+ <h2 class="ttl a">১ম স্তর: Shape, সবই সংখ্যা</h2>
+ <div class="card a" id="shapeCard"><svg viewBox="0 0 340 300"><rect x="4" y="4" width="332" height="292" rx="18" fill="#EAF3FF"/><circle id="c3" cx="150" cy="150" r="70" fill="#1659F5"/></svg></div>
+ <div class="card a" id="codeCard">
+  <div class="row a"><code>&lt;circle</code></div>
+  <div class="row a"><code>cx="<b id="vcx">150</b>"</code><span>বাঁ থেকে কত দূরে</span></div>
+  <div class="row a"><code>cy="150"</code><span>উপর থেকে কত দূরে</span></div>
+  <div class="row a"><code>r="<b id="vr">70</b>" /&gt;</code><span>কত বড়</span></div>
+ </div>
+ <p class="cap a" id="cap3">সংখ্যা বদলাও, আকার বদলে যায়।</p>
+</section>
+<!-- 4 Code -->
+<section class="scene" id="s4">
+ <h2 class="ttl a">২য় স্তর: Code, মানে নির্দেশ</h2>
+ <div class="card a" id="codeLine"><span>gsap.to(<span class="tok t1">".dot"<i class="lab t1">কাকে?</i></span>, { <span class="tok t2">x: 400<i class="lab t2">কী করবে?</i></span>, <span class="tok t3">duration: 2<i class="lab t3">কতক্ষণ?</i></span> })</span></div>
+ <div class="card a" id="trk"><div class="dotb" id="dot2"></div></div>
+ <p class="cap a" id="cap4">একটা লাইন = কাকে + কী করবে + কতক্ষণ</p>
+</section>
+<!-- 5 Time -->
+<section class="scene" id="s5">
+ <h2 class="ttl a">৩য় স্তর: Time, মানে সংখ্যা বদলানো</h2>
+ <div class="card a" id="tl5"><div class="dotb" id="dot5"></div></div>
+ <div class="a" id="rdrow"><em>progress</em><span id="rd">0.00</span></div>
+ <input class="a" id="sl" type="range" min="0" max="1" step="0.01" value="0">
+ <p class="bn a" id="st5">Animation মানে সময়ের সাথে একটা সংখ্যা ০ থেকে ১-এ যাওয়া। Slider টেনে দেখো!</p>
+</section>
+<!-- 6 Recap -->
+<section class="scene" id="s6">
+ <h2 class="ttl a">আজ আমরা শিখলাম</h2>
+ <div class="card pill a" id="pl1"><b>Shape</b>সংখ্যায় আকার</div>
+ <div class="card pill a" id="pl2"><b>Code</b>নির্দেশের লাইন</div>
+ <div class="card pill a" id="pl3"><b>Time</b>সংখ্যার বদল</div>
+ <div class="card a" id="next"><small>পরের ক্লাস</small><h2>SVG: Canvas, Shapes &amp; Color</h2></div>
+</section>
+<div id="brand">Lumademy</div><div id="info">AI Motion Graphics Crash Course · Lesson 01</div>
+<div id="dots"></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const st=$('#stage'),sc=$$('.scene'),dots=$('#dots');
+sc.forEach(()=>dots.append(document.createElement('b')));
+function fit(){const s=Math.min(innerWidth/1920,innerHeight/1080);st.style.transform='scale('+s+')';st.style.left=(innerWidth-1920*s)/2+'px';st.style.top=(innerHeight-1080*s)/2+'px'}
+addEventListener('resize',fit);fit();
+const inA=(el,y=60,d=.13)=>gsap.timeline().fromTo($$('.a',el),{y,opacity:0},{y:0,opacity:1,duration:.7,stagger:d,ease:'power3.out'});
+const B=[
+ el=>{const t=inA(el);t.to($$('.orb',el),{y:'+=34',duration:2.4,yoyo:true,repeat:-1,ease:'sine.inOut',stagger:.35},0);return t},
+ el=>{const t=gsap.timeline(),ty=$('#typed'),P='Make a 5-second logo reveal. Blue and white.',o={n:0};ty.textContent='';
+  t.fromTo($$('.a',el),{y:60,opacity:0},{y:0,opacity:1,duration:.7,stagger:.15,ease:'power3.out'})
+   .to(o,{n:P.length,duration:2.2,ease:'none',onUpdate:()=>{ty.textContent=P.slice(0,Math.round(o.n))}})
+   .fromTo('#ring',{strokeDashoffset:692},{strokeDashoffset:0,duration:1.2,ease:'power2.inOut'})
+   .fromTo('#fillc',{attr:{r:0}},{attr:{r:98},duration:.6,ease:'back.out(1.7)'},'-=.2')
+   .fromTo('#ltr',{opacity:0,scale:.3,svgOrigin:'200 170'},{opacity:1,scale:1,svgOrigin:'200 170',duration:.5,ease:'back.out(2)'},'-=.3')
+   .fromTo('#cap1',{y:40,opacity:0},{y:0,opacity:1,duration:.7},'+=.2');return t},
+ el=>inA(el,120,.22),
+ el=>{const t=inA(el),o={cx:150,r:70},c=$('#c3'),u=()=>{c.setAttribute('cx',o.cx);c.setAttribute('r',o.r);$('#vcx').textContent=Math.round(o.cx);$('#vr').textContent=Math.round(o.r)};
+  u();t.to(o,{cx:190,r:90,duration:1.6,ease:'power2.inOut',yoyo:true,repeat:-1,repeatDelay:.5,onUpdate:u},1.6);return t},
+ el=>{const t=inA(el);t.fromTo($$('.lab',el),{opacity:0,y:20},{opacity:1,y:0,duration:.5,stagger:.4},1.2)
+   .fromTo('#dot2',{x:0},{x:1480,duration:2,ease:'power2.inOut',repeat:-1,yoyo:true,repeatDelay:.4},2.2);return t},
+ el=>{const t=inA(el),P={v:0},d=$('#dot5'),rd=$('#rd'),sl=$('#sl'),u=()=>{gsap.set(d,{x:P.v*1380});rd.textContent=P.v.toFixed(2);sl.value=P.v};
+  u();const run=gsap.to(P,{v:1,duration:3,ease:'none',onUpdate:u,delay:1.2,repeat:-1,repeatDelay:.8});t.add(run,0);
+  sl.oninput=()=>{run.pause();P.v=+sl.value;u()};return t},
+ el=>inA(el,80,.15)
+];
+let i=-1,cur;
+function go(n){if(n<0||n>=sc.length)return;if(cur)cur.kill();sc.forEach((s,k)=>s.classList.toggle('on',k==n));[...dots.children].forEach((b,k)=>b.classList.toggle('on',k==n));i=n;cur=B[n](sc[n])}
+document.addEventListener('click',e=>{if(!e.target.closest('input'))go(i+1)});
+addEventListener('keydown',e=>{if([' ','ArrowRight','ArrowDown','Enter'].includes(e.key)){e.preventDefault();go(i+1)}if(['ArrowLeft','ArrowUp','Backspace'].includes(e.key))go(i-1)});
+go(0);
+</script>
+<div id="sp" style="position:fixed;left:0;right:0;bottom:0;background:rgba(11,31,77,.94);color:#fff;padding:2vmin 4vw;font:2.4vmin/1.6 'Hind Siliguri',sans-serif;display:none;z-index:9"></div>
+<script>const SAY=["আসসালামু আলাইকুম। এই কোর্সে আমরা AI দিয়ে motion graphics বানানো শিখব। তবে শুধু বোতাম টিপে নয়, ভেতরে কী ঘটে সেটাও বুঝব, যাতে AI ভুল করলে আপনি নিজে ধরতে পারেন। আজকের প্রশ্ন একটাই: AI ভিডিও বানায় কীভাবে?", "দেখুন, আমি একটা ইংরেজি বাক্য লিখলাম: পাঁচ সেকেন্ডের একটা লোগো reveal বানাও, নীল আর সাদা রঙে। কয়েক সেকেন্ডে লোগোর রেখা আঁকা হলো, ভেতরে রং ভরল, তারপর অক্ষর এল। প্রথম দেখায় জাদু মনে হয়। কিন্তু ভেতরে আসলে কী ঘটল?", "ভেতরে তিনটা স্তর আছে। এক, আকার, ইংরেজিতে Shape: পর্দায় কী দেখা যাবে। দুই, নির্দেশ, ইংরেজিতে Code: সেই আকার কী করবে। তিন, সময়, ইংরেজিতে Time: কখন আর কত দ্রুত। এই তিনটা মিলেই যেকোনো ভিডিও হয়। চলুন একটা একটা করে দেখি।", "প্রথম স্তর, আকার। কম্পিউটারের কাছে একটা বৃত্ত শুধু তিনটা সংখ্যা। cx: বাঁ থেকে কত দূরে। cy: উপর থেকে কত দূরে। r: কত বড়। দেখুন, সংখ্যা বদলাচ্ছে আর বৃত্ত সরছে, বড় হচ্ছে। আকার বদলাতে হলে শুধু সংখ্যা বদলাতে হয়।", "দ্বিতীয় স্তর, নির্দেশ। এই এক লাইনে তিনটা কথা আছে। কাকে: ডট নামের বিন্দুকে। কী করবে: x চারশো, মানে ডানে চারশো পর্যন্ত যাও। কতক্ষণে: দুই সেকেন্ডে। নিচে দেখুন, ঠিক সেটাই হচ্ছে। কোড মানে এটুকুই: কাকে, কী করতে হবে, আর কতক্ষণে।", "তৃতীয় স্তর, সময়। সময় আসলে একটা সংখ্যা, যা শূন্য থেকে এক-এ যায়। এই সংখ্যা যেখানে থাকে, বিন্দুও সেখানে থাকে। Slider টানুন: সংখ্যা বদলায়, বিন্দু সরে। এখান থেকেই বোঝা যায়, animation মানে সময়ের সাথে একটা সংখ্যার বদল।", "আজ শিখলাম তিনটা স্তর: আকার, নির্দেশ, সময়। যেকোনো AI ভিডিও এই তিনটার মিলন। পরের ক্লাসে প্রথম স্তর, মানে SVG, বিস্তারিত শিখব।"];const sp=document.getElementById('sp');const up=()=>setTimeout(()=>{sp.textContent=SAY[i]||''},60);addEventListener('keydown',e=>{if(e.key=='s'||e.key=='S')sp.style.display=sp.style.display=='block'?'none':'block';up()});document.addEventListener('click',up);up();</script></body>
+</html>

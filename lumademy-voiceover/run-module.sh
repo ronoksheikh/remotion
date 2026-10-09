@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# usage: ./run-module.sh lesson-01-three-layers lesson-02-reading-ai-logo ...
+for l in "$@"; do node build.mjs lessons/$l --workers "${WORKERS:-4}" || exit 1; done
