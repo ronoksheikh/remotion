@@ -1,0 +1,58 @@
+{
+ "https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap": {
+  "file": "e30d8c6c55d79c44.css",
+  "type": "text/css; charset=utf-8"
+ },
+ "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwTs5juQtsyLLR5jN4cxBEoTI7ax9k0.woff2": {
+  "file": "b4d8274d03b51fcd.woff2",
+  "type": "font/woff2"
+ },
+ "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwTs5juQtsyLLR5jN4cxBEoTJLax9k0.woff2": {
+  "file": "029546fe6f288540.woff2",
+  "type": "font/woff2"
+ },
+ "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwTs5juQtsyLLR5jN4cxBEoTJzaxw.woff2": {
+  "file": "6d3d419b60ca90ab.woff2",
+  "type": "font/woff2"
+ },
+ "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwOs5juQtsyLLR5jN4cxBEoREP-0vQVKxGv.woff2": {
+  "file": "c9685b2005b6ae3c.woff2",
+  "type": "font/woff2"
+ },
+ "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwOs5juQtsyLLR5jN4cxBEoREP-0ugVKxGv.woff2": {
+  "file": "2c0b1073003d780a.woff2",
+  "type": "font/woff2"
+ },
+ "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwOs5juQtsyLLR5jN4cxBEoREP-0uYVKw.woff2": {
+  "file": "29107ff396e5f9c7.woff2",
+  "type": "font/woff2"
+ },
+ "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwOs5juQtsyLLR5jN4cxBEoRCf_0vQVKxGv.woff2": {
+  "file": "884b1e332e8c60f8.woff2",
+  "type": "font/woff2"
+ },
+ "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwOs5juQtsyLLR5jN4cxBEoRCf_0ugVKxGv.woff2": {
+  "file": "e9b0afff7dd6d9e7.woff2",
+  "type": "font/woff2"
+ },
+ "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwOs5juQtsyLLR5jN4cxBEoRCf_0uYVKw.woff2": {
+  "file": "88d69d1f0010990c.woff2",
+  "type": "font/woff2"
+ },
+ "https://fonts.gstatic.com/s/spacegrotesk/v22/V8mDoQDjQSkFtoMM3T6r8E7mPb54C-s0.woff2": {
+  "file": "01d4d5170552e06f.woff2",
+  "type": "font/woff2"
+ },
+ "https://fonts.gstatic.com/s/spacegrotesk/v22/V8mDoQDjQSkFtoMM3T6r8E7mPb94C-s0.woff2": {
+  "file": "c0b2233dc1a136e3.woff2",
+  "type": "font/woff2"
+ },
+ "https://fonts.gstatic.com/s/spacegrotesk/v22/V8mDoQDjQSkFtoMM3T6r8E7mPbF4Cw.woff2": {
+  "file": "4ecc7e89b711aba0.woff2",
+  "type": "font/woff2"
+ },
+ "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js": {
+  "file": "fce7bc2ae05fff8b.js",
+  "type": "application/javascript; charset=utf-8"
+ }
+}

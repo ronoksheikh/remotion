@@ -5,10 +5,10 @@
     "stability": 0.4,
     "similarity_boost": 0.8
   },
-  "tempo": 1.2,
-  "fps": 30,
+  "tempo": 1.1,
+  "fps": 60,
   "leadSeconds": 0.5,
-  "tailSeconds": 0.5,
+  "tailSeconds": 0.7,
   "width": 1920,
   "height": 1080
 }

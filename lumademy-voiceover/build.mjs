@@ -14,6 +14,7 @@ import crypto from 'node:crypto';
 import os from 'node:os';
 import { spawn, spawnSync } from 'node:child_process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { useVendor } from './offline.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 
@@ -72,19 +73,23 @@ async function tts(text) {
 }
 
 async function getVoice(i, text) {
-  const hash = crypto.createHash('sha1').update(JSON.stringify([text, cfg.voiceId, cfg.model, cfg.voiceSettings, cfg.tempo])).digest('hex').slice(0, 10);
+  // The raw ElevenLabs take is cached by text + voice settings only, so changing `tempo` never re-spends credits.
+  const hash = crypto.createHash('sha1').update(JSON.stringify([text, cfg.voiceId, cfg.model, cfg.voiceSettings])).digest('hex').slice(0, 10);
   const base = path.join(buildDir, 'audio', `slide-${String(i + 1).padStart(2, '0')}-${hash}`);
-  if (!fs.existsSync(base + '.mp3') || !fs.existsSync(base + '.json')) {
+  if (!fs.existsSync(base + '.raw.mp3') || !fs.existsSync(base + '.json')) {
     process.stdout.write(`  voice  slide ${i + 1}: generating (${text.length} chars)... `);
     const r = await tts(text);
     fs.writeFileSync(base + '.raw.mp3', Buffer.from(r.audio_base64, 'base64'));
-    if (cfg.tempo && cfg.tempo !== 1) run('ffmpeg', ['-y', '-v', 'error', '-i', base + '.raw.mp3', '-filter:a', `atempo=${cfg.tempo}`, base + '.mp3']);
-    else fs.copyFileSync(base + '.raw.mp3', base + '.mp3');
     fs.writeFileSync(base + '.json', JSON.stringify(r.alignment || null));
     console.log('done');
   } else console.log(`  voice  slide ${i + 1}: cached`);
+  let file = base + '.raw.mp3';
+  if (cfg.tempo && cfg.tempo !== 1) {
+    file = `${base}-t${cfg.tempo}.mp3`;
+    if (!fs.existsSync(file)) run('ffmpeg', ['-y', '-v', 'error', '-i', base + '.raw.mp3', '-filter:a', `atempo=${cfg.tempo}`, file]);
+  }
   const al = JSON.parse(fs.readFileSync(base + '.json', 'utf8'));
-  return { file: base + '.mp3', align: al, dur: duration(base + '.mp3') };
+  return { file, align: al, dur: duration(file) };
 }
 
 // ---------- cue timing ----------
@@ -114,11 +119,14 @@ function planSlide(i, text, voice, slideCfg) {
   }
   cues.sort((a, b) => a.start - b.start);
   // timeline warp: pairs of [real slide seconds, animation-timeline seconds]
-  const loc2 = makeLocator(text, voice);
+  const loc2raw = makeLocator(text, voice);
+  let lastAt = null, lastT = null;
+  const loc2 = (phrase, label) => (phrase === lastAt ? lastT : ((lastAt = phrase), (lastT = loc2raw(phrase, label))));
   const pts = [[0, 0]];
   for (const s of slideCfg.sync || []) {
-    const t = s.t != null ? s.t : loc2(s.at, `slide ${i + 1} sync`);
+    let t = s.t != null ? s.t : loc2(s.at, `slide ${i + 1} sync`);
     if (t == null) continue;
+    t += s.shift || 0;
     const last = pts[pts.length - 1];
     if (t > last[0] + 0.05 && s.tl > last[1] + 0.01) pts.push([t, s.tl]);
     else console.warn(`  ! sync point out of order, skipped: "${s.at}"`);
@@ -137,7 +145,7 @@ const warp = (pts, t) => {
 // ---------- render one slide ----------
 async function renderSlide(page, i, plan, voice, segPath) {
   const n = Math.round(plan.total * cfg.fps);
-  await page.evaluate(({ i }) => { window.__ov.clear(); go(i); window.__base = gsap.globalTimeline.time(); }, { i });
+  await page.evaluate(({ i }) => { window.__ov.clear(); window.__realtime = null; go(i); window.__base = gsap.globalTimeline.time(); }, { i });
   const missing = await page.evaluate((c) => window.__ov.setCues(c), plan.cues);
   if (missing.length) console.warn(`  ! slide ${i + 1}: selector(s) not found: ${missing.join(', ')}`);
 
@@ -158,7 +166,7 @@ async function renderSlide(page, i, plan, voice, segPath) {
 
   for (let f = 0; f < n; f++) {
     const t = f / cfg.fps;
-    await page.evaluate(([tl, t]) => { gsap.globalTimeline.time(window.__base + tl, false); window.__ov.draw(t); }, [warp(plan.pts, t), t]);
+    await page.evaluate(([tl, t]) => { gsap.globalTimeline.time(window.__base + tl, false); if (window.__realtime) window.__realtime(t); window.__ov.draw(t); }, [warp(plan.pts, t), t]);
     const buf = await page.screenshot({ type: 'jpeg', quality: flag('preview') ? 70 : 95 });
     if (!ff.stdin.write(buf)) await new Promise((r) => ff.stdin.once('drain', r));
     if (f % 90 === 0) process.stdout.write(`  slide ${i + 1}: ${Math.round((f / n) * 100)}%\n`);
@@ -176,6 +184,7 @@ async function main() {
   const mkPage = async () => {
     const p = await browser.newPage({ viewport: { width: cfg.width, height: cfg.height }, deviceScaleFactor: 1 });
     p.on('pageerror', (e) => console.warn('  page error:', e.message));
+    await useVendor(p);
     await p.goto(pathToFileURL(slidesFile).href, { waitUntil: 'load' });
     await p.evaluate(() => document.fonts.ready);
     await p.waitForFunction(() => window.gsap && typeof go === 'function');
@@ -186,7 +195,7 @@ async function main() {
   };
 
   const first = await mkPage();
-  const says = await first.evaluate(() => (typeof L !== 'undefined' ? L.scenes.map((s) => s.say) : SAY));
+  const says = await first.evaluate(() => [...document.querySelectorAll('.scene')].map((_, i) => (typeof L !== 'undefined' ? L.scenes[i]?.say : typeof SAY !== 'undefined' ? SAY[i] : '') || ''));
   const N = says.length;
   console.log(`\n${name}: ${N} slides, model ${cfg.model}, voice ${cfg.voiceId}\n`);
 

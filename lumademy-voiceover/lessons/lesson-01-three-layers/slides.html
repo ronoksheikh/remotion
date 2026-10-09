@@ -69,6 +69,51 @@ h1{font:700 104px/1.08 'Space Grotesk','Hind Siliguri',sans-serif}
 #next{left:140px;top:690px;width:1640px;height:200px;padding:36px 60px}
 #next small{font:600 34px 'Hind Siliguri';color:var(--b1)}
 #next h2{font:700 70px 'Space Grotesk'}
+
+/* ---- added: AI teacher + course map ---- */
+#aiCard{left:140px;top:230px;width:560px;height:600px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px}
+#aiAv{width:250px;height:250px;border-radius:50%;background:linear-gradient(135deg,var(--b1),var(--b2));display:flex;align-items:center;justify-content:center;color:#fff;font:700 96px 'Space Grotesk';box-shadow:0 0 0 18px #EAF3FF}
+.wv{display:flex;gap:12px;align-items:center;height:80px}.wv i{display:block;width:14px;height:80px;border-radius:7px;background:var(--b1);transform-origin:50% 50%}
+#aiCard b{font:700 46px 'Hind Siliguri';color:var(--ink)}#aiCard small{font:600 30px 'Hind Siliguri';color:#64748B;margin-top:-24px}
+.blk{left:780px;width:1000px;height:120px;border-radius:30px;background:#fff;color:var(--ink);display:flex;align-items:center;gap:30px;padding:0 36px;box-shadow:0 20px 50px rgba(7,30,110,.3)}
+.blk em{font:700 30px 'Space Grotesk';font-style:normal;background:#EAF3FF;color:var(--b1);border-radius:16px;padding:8px 18px;white-space:nowrap}
+.blk b{font:700 42px 'Hind Siliguri'}.blk small{font:600 28px 'Space Grotesk';color:#64748B;margin-left:auto}
+#m1{top:710px;background:var(--ink);color:#fff}#m1 em{background:var(--acc);color:var(--ink)}#m1 small{color:#C7D7FF}
+#m2{top:574px}#m3{top:438px}#m4{top:302px}
+#fnd{left:1480px;top:668px;background:var(--acc);color:var(--ink);font:700 30px 'Hind Siliguri';border-radius:99px;padding:6px 26px;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+/* ---- added: recipe vs pixels ---- */
+.vt{display:inline-block;border-radius:99px;padding:6px 24px;font:600 30px 'Hind Siliguri'}.vt.bad{background:#FDE2E2;color:#B42318}.vt.good{background:#DCFCE7;color:#15803D}
+#pix{left:140px;top:230px;width:640px;height:600px;padding:34px 40px;display:flex;flex-direction:column;align-items:center}
+#pix svg{width:340px;height:408px;margin-top:10px}
+.pn{font:600 30px 'Hind Siliguri';color:#B42318;margin-top:6px}
+#rcp{left:830px;top:230px;width:950px;height:600px;padding:34px 40px}
+#rcpL{position:absolute;left:40px;top:120px;width:540px}
+.rl{font:600 38px/1.4 'Hind Siliguri';padding:14px 22px;border-radius:16px;margin-bottom:18px;background:#F1F5FF}.rl b{color:var(--b1)}
+#rcpLogo{position:absolute;right:30px;top:110px;width:330px;height:396px}
+#capB{top:890px}
+/* ---- added: three layers together ---- */
+#mixLogo{left:140px;top:230px;width:580px;height:600px;padding:30px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+#mixLogo svg{width:420px;height:420px}
+#tnow{font:700 56px var(--mono);color:var(--ink)}
+#tracks{left:760px;top:230px;width:1020px;height:600px;padding:40px}
+.lg{display:flex;gap:18px;margin-bottom:34px}.lg span{font:600 28px 'Hind Siliguri';border-radius:99px;padding:6px 20px;color:#fff}
+.lg .sh{background:var(--b1)}.lg .cd{background:#E8590C}.lg .tm{background:#12A150}
+.trk{display:flex;align-items:center;height:110px;margin-bottom:12px}
+.tn{width:300px;display:flex;flex-direction:column}.tn b{font:700 38px 'Hind Siliguri';color:var(--b1)}.tn i{font:700 32px 'Hind Siliguri';font-style:normal;color:#E8590C}
+.tb{position:relative;width:600px;height:48px;border-radius:12px;background:#EEF4FF}
+.bar{position:absolute;top:0;height:48px;border-radius:12px;background:#12A150}
+.ax{display:flex;justify-content:space-between;margin-left:300px;width:620px;font:600 26px var(--mono);color:#64748B}
+#ph{position:absolute;left:338px;top:118px;width:6px;height:400px;border-radius:3px;background:var(--ink)}
+#ph:before{content:"";position:absolute;left:-9px;top:-14px;width:24px;height:24px;border-radius:50%;background:var(--ink)}
+/* ---- added: debug map ---- */
+#dmCard{left:140px;top:230px;width:1640px;height:600px;padding:36px 50px}
+.dh,.dr{display:grid;grid-template-columns:560px 200px 1fr;gap:30px;align-items:center}
+.dh{font:600 30px 'Hind Siliguri';color:#64748B;padding:0 10px 18px;border-bottom:3px solid #E2E8F0}
+.dr{padding:0 10px;height:156px;border-bottom:2px solid #EEF2F7;font:600 38px/1.35 'Hind Siliguri'}.dr:last-child{border:0}
+.ly{justify-self:start;color:#fff;border-radius:99px;padding:6px 26px;font:700 34px 'Space Grotesk'}
+.ly.sh{background:var(--b1)}.ly.cd{background:#E8590C}.ly.tm{background:#12A150}
+.say{color:var(--b1)}
+#capD{top:890px}
 /* chrome */
 #brand{left:140px;bottom:44px;position:absolute;font:700 38px 'Space Grotesk';display:flex;align-items:center;gap:14px}
 #brand:before{content:"";width:22px;height:22px;border-radius:50%;background:#fff}
@@ -87,6 +132,16 @@ h1{font:700 104px/1.08 'Space Grotesk','Hind Siliguri',sans-serif}
  <h1 class="a" id="h0">How AI Really Builds Motion Graphics</h1>
  <p class="bn a" id="p0">AI আসলে কীভাবে বানায়? মাত্র ৩টা স্তরের গল্প।</p>
 </section>
+<!-- added: AI teacher + course map -->
+<section class="scene" id="sA">
+ <h2 class="ttl a">আমি আপনার A.I. শিক্ষক</h2>
+ <div class="card a" id="aiCard"><div id="aiAv">A.I.</div><div class="wv"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><b>কণ্ঠ: A.I.</b><small>slide আর পাঠ: Lumademy টিম</small></div>
+ <div class="blk" id="m4"><em>Module 4</em><b>Workflow আর শেষ</b><small>Voice, Music, MP4</small></div>
+ <div class="blk" id="m3"><em>Module 3</em><b>A.I. দিয়ে বানাই</b><small>Build with AI</small></div>
+ <div class="blk" id="m2"><em>Module 2</em><b>ভালো আউটপুট পাওয়া</b><small>Prompt</small></div>
+ <div class="blk" id="m1"><em>Module 1</em><b>A.I. কীভাবে বানায়</b><small>এখন এখানে</small></div>
+ <div id="fnd">ভিত্তি</div>
+</section>
 <!-- 1 Hook -->
 <section class="scene" id="s1">
  <h2 class="ttl a">একটা prompt, এক মিনিট</h2>
@@ -95,6 +150,16 @@ h1{font:700 104px/1.08 'Space Grotesk','Hind Siliguri',sans-serif}
   <svg viewBox="0 0 400 360"><circle id="ring" cx="200" cy="170" r="110" fill="none" stroke="#1659F5" stroke-width="16" stroke-linecap="round" stroke-dasharray="692" stroke-dashoffset="692" transform="rotate(-90 200 170)"/><circle id="fillc" cx="200" cy="170" r="0" fill="#1659F5"/><text id="ltr" x="200" y="212" text-anchor="middle" font-size="120" font-weight="700" fill="#fff" font-family="Space Grotesk,sans-serif" opacity="0">L</text><text x="200" y="335" text-anchor="middle" font-size="28" fill="#0B1F4D" font-family="Hind Siliguri,sans-serif">AI বানাল</text></svg>
  </div>
  <p class="cap" id="cap1">১ মিনিটেই তৈরি! কিন্তু ভেতরে আসলে কী ঘটল?</p>
+</section>
+<!-- added: pixels vs recipe -->
+<section class="scene" id="sB">
+ <h2 class="ttl a">A.I. ছবি আঁকে না, রেসিপি লেখে</h2>
+ <div class="card a" id="pix"><span class="vt bad">ছবি-আঁকা A.I.</span><svg viewBox="0 0 200 240"><defs><filter id="bl"><feGaussianBlur stdDeviation="1.3"/></filter></defs><g id="pixG" filter="url(#bl)"></g><text x="100" y="226" text-anchor="middle" font-size="28" font-weight="700" fill="#64748B" filter="url(#bl)" font-family="Space Grotesk,sans-serif" transform="rotate(-3 100 220)">Lumdaemy</text></svg><p class="pn">✗ লেখা ভেঙে যায় · ✗ এক অংশ বদলানো কঠিন</p></div>
+ <div class="card a" id="rcp"><span class="vt good">code-লেখা A.I.</span>
+  <div id="rcpL"><div class="rl" id="rl1">গোল: মাঝখানে, রং <b id="rc1">নীল</b></div><div class="rl" id="rl2">অক্ষর: L, সাদা</div><div class="rl" id="rl3">রেখা: ১ সেকেন্ডে আঁকো</div></div>
+  <svg id="rcpLogo" viewBox="0 0 200 240"><circle id="rRing" cx="100" cy="100" r="70" fill="none" stroke="#1659F5" stroke-width="10" stroke-linecap="round" stroke-dasharray="440" stroke-dashoffset="440" transform="rotate(-90 100 100)"/><circle id="rFill" cx="100" cy="100" r="0" fill="#1659F5"/><text id="rL" x="100" y="100" dy=".35em" text-anchor="middle" font-size="72" font-weight="700" fill="#fff" font-family="Space Grotesk,sans-serif" opacity="0">L</text><text id="rName" x="100" y="226" text-anchor="middle" font-size="28" font-weight="700" fill="#0B1F4D" font-family="Space Grotesk,sans-serif" opacity="0">Lumademy</text></svg>
+ </div>
+ <p class="cap a" id="capB">রেসিপি বদলাও, video বদলায়</p>
 </section>
 <!-- 2 Three layers -->
 <section class="scene" id="s2">
@@ -128,15 +193,39 @@ h1{font:700 104px/1.08 'Space Grotesk','Hind Siliguri',sans-serif}
  <div class="card a" id="tl5"><div class="dotb" id="dot5"></div></div>
  <div class="a" id="rdrow"><em>progress</em><span id="rd">0.00</span></div>
  <input class="a" id="sl" type="range" min="0" max="1" step="0.01" value="0">
- <p class="bn a" id="st5">Animation মানে সময়ের সাথে একটা সংখ্যা ০ থেকে ১-এ যাওয়া। Slider টেনে দেখো!</p>
+ <p class="bn a" id="st5">Animation মানে সময়ের সাথে একটা সংখ্যা ০ থেকে ১-এ যাওয়া।</p>
+</section>
+<!-- added: three layers together -->
+<section class="scene" id="sC">
+ <h2 class="ttl a">তিন স্তর একসাথে</h2>
+ <div class="card a" id="mixLogo"><svg viewBox="0 0 300 300"><circle id="mRing" cx="150" cy="150" r="100" fill="none" stroke="#1659F5" stroke-width="14" stroke-linecap="round" stroke-dasharray="629" stroke-dashoffset="629" transform="rotate(-90 150 150)"/><circle id="mFill" cx="150" cy="150" r="0" fill="#1659F5"/><text id="mL" x="150" y="150" dy=".35em" text-anchor="middle" font-size="110" font-weight="700" fill="#fff" font-family="Space Grotesk,sans-serif" opacity="0">L</text></svg><div id="tnow">0.0 s</div></div>
+ <div class="card a" id="tracks">
+  <div class="lg"><span class="sh">কী: Shape</span><span class="cd">কী করবে: Code</span><span class="tm">কখন: Time</span></div>
+  <div class="trk" id="tr1"><div class="tn"><b>গোল রেখা</b><i>আঁকো</i></div><div class="tb"><span class="bar" style="left:0;width:360px"></span></div></div>
+  <div class="trk" id="tr2"><div class="tn"><b>ভেতরের গোল</b><i>রং ভরো</i></div><div class="tb"><span class="bar" style="left:300px;width:180px"></span></div></div>
+  <div class="trk" id="tr3"><div class="tn"><b>L অক্ষর</b><i>আনো</i></div><div class="tb"><span class="bar" style="left:390px;width:150px"></span></div></div>
+  <div class="ax"><span>0s</span><span>0.5s</span><span>1s</span><span>1.5s</span><span>2s</span></div>
+  <div id="ph"></div>
+ </div>
+</section>
+<!-- added: debug map -->
+<section class="scene" id="sD">
+ <h2 class="ttl a">ভুল ধরার ম্যাপ</h2>
+ <div class="card a" id="dmCard">
+  <div class="dh"><span>যা দেখছেন</span><span>কোন স্তর</span><span>A.I.-কে যা বলবেন</span></div>
+  <div class="dr" id="dm1"><span class="pb">রং ভুল, লেখা কেটে যাচ্ছে</span><span class="ly sh">Shape</span><span class="say">“গোলটা নীল করো, লেখা একটু ছোট করো”</span></div>
+  <div class="dr" id="dm2"><span class="pb">নড়ছেই না, উল্টো দিকে যাচ্ছে</span><span class="ly cd">Code</span><span class="say">“লোগোটা বাঁ থেকে ডানে সরাও”</span></div>
+  <div class="dr" id="dm3"><span class="pb">খুব দ্রুত বা ধীর, সব একসাথে আসছে</span><span class="ly tm">Time</span><span class="say">“১ সেকেন্ডে আনো, একটার পর একটা”</span></div>
+ </div>
+ <p class="cap a" id="capD">আগে স্তর চিনুন, তারপর পরিষ্কার করে বলুন</p>
 </section>
 <!-- 6 Recap -->
 <section class="scene" id="s6">
  <h2 class="ttl a">আজ আমরা শিখলাম</h2>
- <div class="card pill a" id="pl1"><b>Shape</b>সংখ্যায় আকার</div>
- <div class="card pill a" id="pl2"><b>Code</b>নির্দেশের লাইন</div>
- <div class="card pill a" id="pl3"><b>Time</b>সংখ্যার বদল</div>
- <div class="card a" id="next"><small>পরের ক্লাস</small><h2>SVG: Canvas, Shapes &amp; Color</h2></div>
+ <div class="card pill a" id="pl1"><b>Shape</b>কী দেখা যাবে</div>
+ <div class="card pill a" id="pl2"><b>Code</b>কে, কী করবে</div>
+ <div class="card pill a" id="pl3"><b>Time</b>কখন, কত দ্রুত</div>
+ <div class="card a" id="next"><small>পরের ক্লাস</small><h2>Reading an AI-Made Logo</h2></div>
 </section>
 <div id="brand">Lumademy</div><div id="info">AI Motion Graphics Crash Course · Lesson 01</div>
 <div id="dots"></div>
@@ -151,6 +240,12 @@ addEventListener('resize',fit);fit();
 const inA=(el,y=60,d=.13)=>gsap.timeline().fromTo($$('.a',el),{y,opacity:0},{y:0,opacity:1,duration:.7,stagger:d,ease:'power3.out'});
 const B=[
  el=>{const t=inA(el);t.to($$('.orb',el),{y:'+=34',duration:2.4,yoyo:true,repeat:-1,ease:'sine.inOut',stagger:.35},0);return t},
+ el=>{const t=inA(el);
+  t.fromTo('#aiAv',{scale:.4,opacity:0},{scale:1,opacity:1,duration:.7,ease:'back.out(1.8)'},.3);
+  t.fromTo($$('.wv i',el),{scaleY:.25},{scaleY:1,duration:.34,ease:'sine.inOut',yoyo:true,repeat:-1,stagger:{each:.07,from:'center'}},.6);
+  t.fromTo(['#m1','#m2','#m3','#m4'],{y:70,opacity:0},{y:0,opacity:1,duration:.55,stagger:.6,ease:'power3.out'},2.0);
+  t.fromTo('#fnd',{scale:0,opacity:0},{scale:1,opacity:1,duration:.5,ease:'back.out(2.2)'},4.4);
+  const wb=$$('.wv i',el);window.__realtime=rt=>wb.forEach((b,k)=>{b.style.transform='scaleY('+(.3+.7*Math.abs(Math.sin(rt*6.5+k*.9)))+')'});return t},
  el=>{const t=gsap.timeline(),ty=$('#typed'),P='Make a 5-second logo reveal. Blue and white.',o={n:0};ty.textContent='';
   t.fromTo($$('.a',el),{y:60,opacity:0},{y:0,opacity:1,duration:.7,stagger:.15,ease:'power3.out'})
    .to(o,{n:P.length,duration:2.2,ease:'none',onUpdate:()=>{ty.textContent=P.slice(0,Math.round(o.n))}})
@@ -158,6 +253,17 @@ const B=[
    .fromTo('#fillc',{attr:{r:0}},{attr:{r:98},duration:.6,ease:'back.out(1.7)'},'-=.2')
    .fromTo('#ltr',{opacity:0,scale:.3,svgOrigin:'200 170'},{opacity:1,scale:1,svgOrigin:'200 170',duration:.5,ease:'back.out(2)'},'-=.3')
    .fromTo('#cap1',{y:40,opacity:0},{y:0,opacity:1,duration:.7},'+=.2');return t},
+ el=>{const t=inA(el),g=$('#pixG');if(!g.childElementCount){let h='';for(let y=0;y<20;y++)for(let x=0;x<20;x++){const cx=x*10+5,cy=y*10+5,d=Math.hypot(cx-100,cy-100),n=Math.sin(x*12.9898+y*78.233)*43758.5453%1;let c;
+   if(((cx>82&&cx<98&&cy>66&&cy<130)||(cy>116&&cy<132&&cx>82&&cx<126))&&n>-.55)c='hsl(215,40%,'+(82+n*12)+'%)';else if(d<62)c='hsl('+(218+n*14)+',75%,'+(52+n*12)+'%)';else if(d<74)c='hsl(220,70%,'+(38+n*14)+'%)';else c='hsl(214,30%,'+(90+n*6)+'%)';
+   h+='<rect x="'+x*10+'" y="'+y*10+'" width="10.4" height="10.4" fill="'+c+'"/>'}g.innerHTML=h}
+  t.fromTo($$('#pixG rect',el),{opacity:0},{opacity:1,duration:.3,stagger:{each:.004,from:'random'}},.9);
+  t.fromTo($$('.rl',el),{x:-30,opacity:0},{x:0,opacity:1,duration:.4,stagger:.4,ease:'power2.out'},2.4);
+  t.fromTo('#rRing',{strokeDashoffset:440},{strokeDashoffset:0,duration:1,ease:'power2.inOut'},4.0)
+   .fromTo('#rFill',{attr:{r:0}},{attr:{r:58},duration:.5,ease:'back.out(1.7)'},4.8)
+   .fromTo(['#rL','#rName'],{opacity:0},{opacity:1,duration:.4},5.1);
+  t.call(()=>{$('#rc1').textContent='নীল';$('#rc1').style.color='';gsap.set(['#rFill'],{attr:{fill:'#1659F5'}});gsap.set('#rRing',{attr:{stroke:'#1659F5'}})},null,0);
+  t.to('#rl1',{backgroundColor:'#DCFCE7',duration:.3},6.0).call(()=>{$('#rc1').textContent='সবুজ';$('#rc1').style.color='#12A150'},null,6.0)
+   .to('#rFill',{attr:{fill:'#12A150'},duration:.5},6.1).to('#rRing',{attr:{stroke:'#12A150'},duration:.5},6.1);return t},
  el=>inA(el,120,.22),
  el=>{const t=inA(el),o={cx:150,r:70},c=$('#c3'),u=()=>{c.setAttribute('cx',o.cx);c.setAttribute('r',o.r);$('#vcx').textContent=Math.round(o.cx);$('#vr').textContent=Math.round(o.r)};
   u();t.to(o,{cx:190,r:90,duration:1.6,ease:'power2.inOut',yoyo:true,repeat:-1,repeatDelay:.5,onUpdate:u},1.6);return t},
@@ -166,6 +272,15 @@ const B=[
  el=>{const t=inA(el),P={v:0},d=$('#dot5'),rd=$('#rd'),sl=$('#sl'),u=()=>{gsap.set(d,{x:P.v*1380});rd.textContent=P.v.toFixed(2);sl.value=P.v};
   u();const run=gsap.to(P,{v:1,duration:3,ease:'none',onUpdate:u,delay:1.2,repeat:-1,repeatDelay:.8});t.add(run,0);
   sl.oninput=()=>{run.pause();P.v=+sl.value;u()};return t},
+ el=>{const t=inA(el),o={s:0},nw=$('#tnow');
+  const run=gsap.timeline({repeat:-1,repeatDelay:1.4});
+  run.set('#mRing',{strokeDashoffset:629}).set('#mFill',{attr:{r:0}}).set('#mL',{opacity:0})
+   .fromTo(o,{s:0},{s:2,duration:2,ease:'none',onUpdate:()=>{$('#ph').style.transform='translateX('+o.s*300+'px)';nw.textContent=o.s.toFixed(1)+' s'}},0)
+   .to('#mRing',{strokeDashoffset:0,duration:1.2,ease:'power2.inOut'},0)
+   .to('#mFill',{attr:{r:86},duration:.6,ease:'back.out(1.7)'},1.0)
+   .fromTo('#mL',{opacity:0,scale:.3,svgOrigin:'150 150'},{opacity:1,scale:1,svgOrigin:'150 150',duration:.5,ease:'back.out(2)'},1.3);
+  t.add(run,1.4);return t},
+ el=>{const t=inA(el);['#dm1','#dm2','#dm3'].forEach((q,k)=>t.fromTo(q,{x:-60,opacity:0},{x:0,opacity:1,duration:.5,ease:'power3.out'},1.2+k));return t},
  el=>inA(el,80,.15)
 ];
 let i=-1,cur;
@@ -175,5 +290,5 @@ addEventListener('keydown',e=>{if([' ','ArrowRight','ArrowDown','Enter'].include
 go(0);
 </script>
 <div id="sp" style="position:fixed;left:0;right:0;bottom:0;background:rgba(11,31,77,.94);color:#fff;padding:2vmin 4vw;font:2.4vmin/1.6 'Hind Siliguri',sans-serif;display:none;z-index:9"></div>
-<script>const SAY=["আসসালামু আলাইকুম। এই কোর্সে আমরা AI দিয়ে motion graphics বানানো শিখব। তবে শুধু বোতাম টিপে নয়, ভেতরে কী ঘটে সেটাও বুঝব, যাতে AI ভুল করলে আপনি নিজে ধরতে পারেন। আজকের প্রশ্ন একটাই: AI ভিডিও বানায় কীভাবে?", "দেখুন, আমি একটা ইংরেজি বাক্য লিখলাম: পাঁচ সেকেন্ডের একটা লোগো reveal বানাও, নীল আর সাদা রঙে। কয়েক সেকেন্ডে লোগোর রেখা আঁকা হলো, ভেতরে রং ভরল, তারপর অক্ষর এল। প্রথম দেখায় জাদু মনে হয়। কিন্তু ভেতরে আসলে কী ঘটল?", "ভেতরে তিনটা স্তর আছে। এক, আকার, ইংরেজিতে Shape: পর্দায় কী দেখা যাবে। দুই, নির্দেশ, ইংরেজিতে Code: সেই আকার কী করবে। তিন, সময়, ইংরেজিতে Time: কখন আর কত দ্রুত। এই তিনটা মিলেই যেকোনো ভিডিও হয়। চলুন একটা একটা করে দেখি।", "প্রথম স্তর, আকার। কম্পিউটারের কাছে একটা বৃত্ত শুধু তিনটা সংখ্যা। cx: বাঁ থেকে কত দূরে। cy: উপর থেকে কত দূরে। r: কত বড়। দেখুন, সংখ্যা বদলাচ্ছে আর বৃত্ত সরছে, বড় হচ্ছে। আকার বদলাতে হলে শুধু সংখ্যা বদলাতে হয়।", "দ্বিতীয় স্তর, নির্দেশ। এই এক লাইনে তিনটা কথা আছে। কাকে: ডট নামের বিন্দুকে। কী করবে: x চারশো, মানে ডানে চারশো পর্যন্ত যাও। কতক্ষণে: দুই সেকেন্ডে। নিচে দেখুন, ঠিক সেটাই হচ্ছে। কোড মানে এটুকুই: কাকে, কী করতে হবে, আর কতক্ষণে।", "তৃতীয় স্তর, সময়। সময় আসলে একটা সংখ্যা, যা শূন্য থেকে এক-এ যায়। এই সংখ্যা যেখানে থাকে, বিন্দুও সেখানে থাকে। Slider টানুন: সংখ্যা বদলায়, বিন্দু সরে। এখান থেকেই বোঝা যায়, animation মানে সময়ের সাথে একটা সংখ্যার বদল।", "আজ শিখলাম তিনটা স্তর: আকার, নির্দেশ, সময়। যেকোনো AI ভিডিও এই তিনটার মিলন। পরের ক্লাসে প্রথম স্তর, মানে SVG, বিস্তারিত শিখব।"];const sp=document.getElementById('sp');const up=()=>setTimeout(()=>{sp.textContent=SAY[i]||''},60);addEventListener('keydown',e=>{if(e.key=='s'||e.key=='S')sp.style.display=sp.style.display=='block'?'none':'block';up()});document.addEventListener('click',up);up();</script></body>
+<script>const SAY=["আসসালামু আলাইকুম! লুমাডেমির A.I. Motion Graphics Crash Course-এ আপনাকে স্বাগতম। আজকের প্রশ্নটা খুব সহজ, কিন্তু খুব গুরুত্বপূর্ণ: A.I. আসলে video বানায় কীভাবে? এই lesson শেষে আপনি উত্তরটা নিজের ভাষায় বলতে পারবেন, মাত্র তিনটা শব্দে।", "শুরুতেই একটা কথা খোলাখুলি বলি: আমি একজন A.I.। এই course-এর slide আর পাঠ Lumademy টিমের বানানো, আর আমি সেগুলো আপনাকে ধাপে ধাপে বুঝিয়ে বলব। মজার ব্যাপার হলো, যে A.I. আপনাকে পড়াচ্ছে, সেই A.I. দিয়েই আপনি video বানানো শিখবেন! এবার পুরো course-টা একটা বিল্ডিং হিসেবে দেখুন, চারটা তলা। একদম নিচে Module এক: A.I. কীভাবে বানায়। তার ওপর Module দুই: কী বললে A.I. সবচেয়ে ভালো output দেয়। তারপর Module তিন: A.I. দিয়ে নিজের video বানানো। আর সবার ওপরে Module চার: voice, music আর final MP4। খেয়াল করুন, Module এক হলো ভিত্তি। ভিত্তি দুর্বল হলে বিল্ডিং টেকে না। এই lesson-গুলো skip করলে, পরে A.I. ভুল করলে বুঝবেন না ভুলটা কোথায়, আর কী বলে ঠিক করাবেন। কিন্তু এগুলো বুঝলে আপনি নিজে নিজে অনেক অনেক video বানাতে পারবেন। তাই চলুন, মন দিয়ে শুরু করি।", "চলুন একটা ছোট্ট experiment দিয়ে শুরু করি। আমি A.I.-কে শুধু একটা বাক্য লিখে দিলাম: Make a five-second logo reveal. Blue and white. মানে, পাঁচ second-এর একটা logo reveal বানাও, নীল আর সাদায়। এবার দেখুন। প্রথমে logo-র outline আঁকা হলো। তারপর ভেতরে color ভরল। আর শেষে letter এসে বসল। দেখে মনে হয় magic, তাই না? কিন্তু এটা magic না, এর পেছনে একটা পরিষ্কার নিয়ম আছে। আজ আমরা সেই নিয়মটাই খুলে দেখব।", "কিন্তু তার আগে একটা জিনিস পরিষ্কার করি, কারণ এখানেই অনেকে ভুল বোঝে। A.I. দুই রকমভাবে video বানাতে পারে। বাঁয়ে, ছবি-আঁকা A.I.। এটা সরাসরি pixel আঁকে, মানে হাজার হাজার ছোট রঙিন বিন্দু। দেখতে সুন্দর হতে পারে, কিন্তু লেখা প্রায়ই ভেঙে যায়, বিশেষ করে বাংলা লেখা। আর শুধু একটা অংশ বদলাতে চাইলে পুরো ছবিটাই আবার বানাতে হয়। ডানে, code-লেখা A.I.। এটা ছবি আঁকে না, একটা রেসিপি লেখে: কোথায় কোন আকার, কী রং, কখন কী হবে। তারপর computer সেই রেসিপি দেখে প্রতিবার একদম নিখুঁতভাবে video-টা বানায়। একটা উদাহরণ দিই। কেউ আপনাকে বিরিয়ানির একটা ছবি দিল। লবণ কম করতে চাইলে ছবিতে তো আর লবণ কমানো যায় না! কিন্তু রেসিপি হাতে থাকলে শুধু এক লাইন বদলালেই হলো। দেখুন, রেসিপিতে নীল বদলে সবুজ লিখলাম, আর logo-ও সবুজ হয়ে গেল। এই course-এ আমরা এই দ্বিতীয় ধরনটা নিয়েই কাজ করব।", "তাহলে এই রেসিপিতে কী কী থাকে? ঠিক তিন ধরনের কথা। এগুলোকেই বলি তিনটা স্তর, বা layer। এক: Shape, মানে আকার। Screen-এ কী দেখা যাবে, গোল, বাক্স, লেখা। দুই: Code, মানে নির্দেশ। আকারগুলো কী করবে, সরবে, বড় হবে, নাকি রং বদলাবে। তিন: Time, মানে সময়। কখন শুরু হবে, আর কত দ্রুত। মনে রাখার সহজ উপায়: পুতুল নাচ। পুতুলগুলো হলো shape। কোন পুতুল কীভাবে নাচবে, সেটা code। আর কখন কোন নাচ, সেটা time। চলুন, একটা একটা করে খুলে দেখি।", "প্রথম স্তর, Shape। Computer-এর কাছে একটা গোল আসলে শুধু তিনটা সংখ্যা। ডানে দেখুন। সি-এক্স: বাঁ দিক থেকে কত দূরে। সি-ওয়াই: ওপর থেকে কত দূরে। আর r, মানে radius: গোলটা কত বড়। এবার দেখুন, সংখ্যা বদলাচ্ছে, আর গোলটা সরছে, বড় হচ্ছে। তাই আকার বদলানো মানেই সংখ্যা বদলানো। আপনাকে এই সংখ্যা মুখস্থ করতে হবে না। শুধু জানুন, প্রতিটা আকারের পেছনে কয়েকটা সংখ্যা আছে, আর A.I.-কে বললে সে সংখ্যাগুলো বদলে দেয়।", "দ্বিতীয় স্তর, Code। Code শুনে ভয় পাবেন না। এই এক লাইনে আসলে তিনটা প্রশ্নের উত্তর। কাকে? dot নামের বিন্দুকে। কী করবে? ডান দিকে চারশো পর্যন্ত সরবে। কতক্ষণে? দুই second-এ। নিচে দেখুন, বিন্দুটা ঠিক তাই করছে। এটা আসলে আমাদের রোজকার কথার মতোই। ধরুন আম্মু বললেন: ছোট ভাই, দোকানে যাও, দশ মিনিটে ফিরবে। কে? ছোট ভাই। কী? দোকানে যাওয়া। কতক্ষণে? দশ মিনিট। Code-ও ঠিক এভাবেই কথা বলে, শুধু computer-এর ভাষায়। আর এই ভাষাটা লিখবে A.I., আপনাকে লিখতে হবে না।", "তৃতীয় স্তর, Time। এটাই animation-এর আসল রহস্য। ওপরে এই progress সংখ্যাটা দেখুন। শুরুতে শূন্য, তারপর বাড়তে বাড়তে এক। আর বিন্দুটা? সংখ্যা যা বলে, ঠিক সেখানে থাকে। শূন্য মানে শুরুতে, আধা মানে মাঝখানে, এক মানে শেষে। যেকোনো animation আসলে এটাই: সময়ের সাথে একটা সংখ্যা শূন্য থেকে একে যাচ্ছে, আর জিনিসটা সেই সংখ্যার পেছনে পেছনে চলছে। সংখ্যাটা কত দ্রুত বাড়বে, সেটাই ঠিক করে animation দ্রুত নাকি ধীর। এই idea-টা মনে রাখবেন, তিন নম্বর lesson-এ এটা দিয়েই আমরা গতির অনুভূতি বদলাব।", "এবার তিনটা স্তর একসাথে দেখি। শুরুর সেই logo animation-টা মনে আছে? ওটাকে খুলে ফেললে ঠিক এরকম দেখায়। প্রতিটা লাইনে তিনটা জিনিস। প্রথম লাইন: গোল রেখা, এটা shape। আঁকো, এটা code। আর পাশের সবুজ bar-টা হলো time: শূন্য থেকে এক দশমিক দুই second পর্যন্ত। দ্বিতীয় লাইন: ভেতরের গোলে রং ভরো, এক second থেকে শুরু। তৃতীয় লাইন: L অক্ষরটা আনো, একদম শেষে। আর এই খাড়া দাগটা হলো playhead, মানে এই মুহূর্তে কোন সময় চলছে। Playhead যে bar-এ ঢোকে, সেই কাজটা শুরু হয়। Mobile-এ CapCut বা যেকোনো video editing app-এর timeline দেখেছেন? ঠিক একই জিনিস। পুরো logo reveal আসলে এই তিন লাইনের রেসিপি।", "এখন সবচেয়ে কাজের অংশ। এই তিনটা স্তর জানা কেন দরকার? কারণ A.I. মাঝে মাঝে ভুল করবেই। আর ভুলটা কোন স্তরের, সেটা চিনতে পারলেই ঠিক করানো সহজ। ধরুন রংটা ভুল এসেছে, বা লেখা কেটে যাচ্ছে। এটা shape-এর সমস্যা। A.I.-কে বলুন: গোলটা নীল করো, লেখা একটু ছোট করো। যদি জিনিসটা নড়ছেই না, বা উল্টো দিকে যাচ্ছে, এটা code-এর সমস্যা। বলুন: লোগোটা বাঁ থেকে ডানে সরাও। আর যদি সবকিছু খুব দ্রুত বা খুব ধীর হয়, বা সব একসাথে চলে আসে, এটা time-এর সমস্যা। বলুন: এক second-এ আনো, একটার পর একটা। দেখলেন? আগে স্তর চিনুন, তারপর পরিষ্কার করে বলুন। তাহলে A.I.-কে আর আন্দাজ করতে হবে না।", "তাহলে আজ কী শিখলাম? A.I. ছবি আঁকে না, রেসিপি লেখে। আর সেই রেসিপিতে তিনটা স্তর। Shape: কী দেখা যাবে, আর সবই আসলে সংখ্যা। Code: কে, কী করবে। Time: কখন, আর কত দ্রুত। আর কিছু ভুল হলে, আগে স্তরটা চিনুন, তারপর A.I.-কে পরিষ্কার করে বলুন। পরের lesson-এ আমরা A.I.-র বানানো একটা logo-র রেসিপি সত্যি সত্যি খুলে পড়ব। চিন্তা নেই, কিছু লিখতে হবে না, শুধু পড়তে শিখব। দেখা হবে!"];const sp=document.getElementById('sp');const up=()=>setTimeout(()=>{sp.textContent=SAY[i]||''},60);addEventListener('keydown',e=>{if(e.key=='s'||e.key=='S')sp.style.display=sp.style.display=='block'?'none':'block';up()});document.addEventListener('click',up);up();</script></body>
 </html>

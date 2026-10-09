@@ -3,10 +3,12 @@
 import { chromium } from 'playwright';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { useVendor } from './offline.mjs';
 const dir = path.resolve(process.argv[2]);
 const only = process.argv[3] ? +process.argv[3] - 1 : null;
 const b = await chromium.launch({ executablePath: process.env.CHROME_PATH || undefined });
 const p = await b.newPage({ viewport: { width: 1920, height: 1080 } });
+await useVendor(p);
 await p.goto(pathToFileURL(path.join(dir, 'slides.html')).href);
 await p.waitForFunction(() => window.gsap && typeof go === 'function');
 const n = await p.evaluate(() => sc.length);
