@@ -1,0 +1,16 @@
+{
+  "name": "lumademy-voiceover",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Turn a Lumademy HTML slideshow into a narrated MP4 (ElevenLabs voice, one clip per slide, cursor + spotlight).",
+  "scripts": {
+    "build": "node build.mjs lessons/lesson-05",
+    "plan": "node build.mjs lessons/lesson-05 --plan",
+    "preview": "node build.mjs lessons/lesson-05 --preview"
+  },
+  "dependencies": {
+    "playwright": "^1.49.0"
+  },
+  "engines": { "node": ">=18" }
+}

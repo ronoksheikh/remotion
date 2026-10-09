@@ -1,0 +1,251 @@
+{
+ "slides": [
+  {
+   "cues": [
+    {
+     "at": "Part B",
+     "sel": ".chip",
+     "anchor": "br",
+     "dur": 2.8
+    },
+    {
+     "at": "এখন শিখব",
+     "sel": "h1",
+     "anchor": "br",
+     "dur": 5
+    },
+    {
+     "at": "আজকের কথা একটাই",
+     "sel": ".sub",
+     "anchor": "br",
+     "dur": 6
+    }
+   ]
+  },
+  {
+   "sync": [
+    {
+     "t": 2.0,
+     "tl": 1.6
+    },
+    {
+     "at": "ফলটা দেখুন",
+     "tl": 1.68
+    }
+   ],
+   "cues": [
+    {
+     "at": "বাঁয়ে",
+     "sel": ".vl .vt",
+     "dur": 2
+    },
+    {
+     "at": "AI কী করবে",
+     "sel": ".vl .vp",
+     "anchor": "br",
+     "dur": 3
+    },
+    {
+     "at": "তাই ফলাফল ফ্যাকাশে",
+     "sel": ".vl svg",
+     "anchor": "center",
+     "dur": 3
+    },
+    {
+     "at": "ডানের prompt",
+     "sel": ".vr .vp",
+     "anchor": "br",
+     "dur": 6
+    },
+    {
+     "at": "ফলটা দেখুন",
+     "sel": ".vr svg",
+     "anchor": "center",
+     "dur": 3.5
+    },
+    {
+     "at": "পার্থক্যটা",
+     "sel": ".cap",
+     "anchor": "br",
+     "dur": 4
+    }
+   ]
+  },
+  {
+   "cues": [
+    {
+     "at": "ভালো prompt-এ পাঁচটা",
+     "sel": ".ttl",
+     "anchor": "br",
+     "dur": 3
+    },
+    {
+     "at": "এক:",
+     "sel": ".cs .lc:nth-child(1)",
+     "dur": 3.5
+    },
+    {
+     "at": "দুই:",
+     "sel": ".cs .lc:nth-child(2)",
+     "dur": 3
+    },
+    {
+     "at": "এটা চার নম্বর",
+     "sel": ".cs .lc:nth-child(2) .tag",
+     "anchor": "center",
+     "dur": 2.5,
+     "pad": 14
+    },
+    {
+     "at": "তিন:",
+     "sel": ".cs .lc:nth-child(3)",
+     "dur": 3
+    },
+    {
+     "at": "যেটা দুই নম্বর",
+     "sel": ".cs .lc:nth-child(3) .tag",
+     "anchor": "center",
+     "dur": 2.5,
+     "pad": 14
+    },
+    {
+     "at": "চার:",
+     "sel": ".cs .lc:nth-child(4)",
+     "dur": 3
+    },
+    {
+     "at": "এটা তিন নম্বর",
+     "sel": ".cs .lc:nth-child(4) .tag",
+     "anchor": "center",
+     "dur": 2.5,
+     "pad": 14
+    },
+    {
+     "at": "পাঁচ:",
+     "sel": ".cs .lc:nth-child(5)",
+     "dur": 6
+    }
+   ]
+  },
+  {
+   "sync": [
+    {
+     "t": 2.0,
+     "tl": 1.6
+    },
+    {
+     "at": "প্রথম অংশ",
+     "tl": 1.68
+    },
+    {
+     "at": "মাপ যোগ",
+     "tl": 3.28
+    },
+    {
+     "at": "চেহারা যোগ",
+     "tl": 5.18
+    },
+    {
+     "at": "গতি যোগ",
+     "tl": 7.08
+    },
+    {
+     "at": "সীমা, মানে",
+     "tl": 8.88
+    }
+   ],
+   "cues": [
+    {
+     "at": "প্রথম অংশ",
+     "sel": "#bp0",
+     "dur": 4
+    },
+    {
+     "at": "AI একটা সাধারণ গোল",
+     "sel": ".R svg",
+     "anchor": "center",
+     "dur": 2.5
+    },
+    {
+     "at": "মাপ যোগ",
+     "sel": "#bp1",
+     "dur": 4
+    },
+    {
+     "at": "চেহারা যোগ",
+     "sel": "#bp2",
+     "dur": 4
+    },
+    {
+     "at": "গতি যোগ",
+     "sel": "#bp3",
+     "dur": 4
+    },
+    {
+     "at": "সীমা, মানে",
+     "sel": "#bp4",
+     "dur": 3.5
+    },
+    {
+     "at": "প্রতিটা অংশ যোগ",
+     "sel": ".R",
+     "anchor": "center",
+     "dur": 6
+    }
+   ]
+  },
+  {
+   "cues": [
+    {
+     "at": "এবার আপনার জন্য",
+     "sel": ".W2",
+     "anchor": "br",
+     "dur": 3
+    },
+    {
+     "at": "ফাঁকা জায়গাগুলো",
+     "sel": ".W2 .rw:nth-child(-n+5)",
+     "anchor": "br",
+     "dur": 4
+    },
+    {
+     "at": "স্ক্রিনশট",
+     "sel": ".W2",
+     "anchor": "br",
+     "dur": 4
+    },
+    {
+     "at": "বিশেষ করে চেহারা",
+     "sel": ".W2 .rw:nth-child(3)",
+     "anchor": "br",
+     "dur": 5
+    }
+   ]
+  },
+  {
+   "cues": [
+    {
+     "at": "prompt যত পরিষ্কার",
+     "sel": ".cs .lc:nth-child(1)",
+     "dur": 4
+    },
+    {
+     "at": "পাঁচটা অংশ",
+     "sel": ".cs .lc:nth-child(2)",
+     "dur": 4
+    },
+    {
+     "at": "আর একটা ছক",
+     "sel": ".cs .lc:nth-child(3)",
+     "dur": 3
+    },
+    {
+     "at": "পরের ক্লাসে",
+     "sel": ".nx",
+     "anchor": "br",
+     "dur": 6
+    }
+   ]
+  }
+ ]
+}
