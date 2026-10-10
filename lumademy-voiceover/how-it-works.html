@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lumademy Video Pipeline</title>
+<style>
+:root{--bg:#F4F7FF;--card:#fff;--ink:#0B1F4D;--mute:#5B6B8C;--b1:#1659F5;--acc:#E8590C;--line:#DCE5F7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0A1430;--card:#111D40;--ink:#E8EEFF;--mute:#9AAAD0;--b1:#5B8CFF;--acc:#FF8A4C;--line:#24345F}}
+:root[data-theme="dark"]{--bg:#0A1430;--card:#111D40;--ink:#E8EEFF;--mute:#9AAAD0;--b1:#5B8CFF;--acc:#FF8A4C;--line:#24345F}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;padding:40px 16px}
+main{max-width:760px;margin:0 auto}
+h1{font-size:28px;line-height:1.2}
+.sub{color:var(--mute);margin:6px 0 24px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:28px}
+.stats div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center}
+.stats b{display:block;font-size:24px;color:var(--b1)}
+.stats span{font-size:13px;color:var(--mute)}
+h2{font-size:18px;margin:28px 0 10px}
+ol{list-style:none;padding:0;counter-reset:s}
+ol li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px 12px 52px;margin-bottom:8px;position:relative}
+ol li:before{content:counter(s);position:absolute;left:14px;top:12px;width:26px;height:26px;border-radius:50%;background:var(--b1);color:#fff;font-weight:700;font-size:14px;display:grid;place-items:center}
+ol li b{display:block}
+ol li span{color:var(--mute);font-size:14px}
+ul{padding-left:20px}ul li{margin-bottom:6px}
+code{font:13px ui-monospace,Menlo,monospace;background:var(--line);padding:1px 6px;border-radius:6px}
+pre{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;overflow-x:auto;font:13px/1.6 ui-monospace,Menlo,monospace}
+@media (max-width:560px){.stats{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<main>
+<h1>Lumademy video pipeline</h1>
+<p class="sub">Slideshow HTML in, narrated 60fps MP4 out.</p>
+
+<div class="stats">
+<div><b>9</b><span>lessons</span></div>
+<div><b>75</b><span>slides</span></div>
+<div><b>22</b><span>slides added</span></div>
+<div><b>~41 min</b><span>of video</span></div>
+</div>
+
+<h2>Slides</h2>
+<ul>
+<li>Kept your GSAP slide decks and added new animated slides where an idea needed a visual.</li>
+<li>Fixed a few slide bugs: overflowing text, a missing CSS position, an unreadable contrast card.</li>
+<li>Rewrote the narration as Banglish, with "A.I." spelled out so it is pronounced correctly.</li>
+<li>Each lesson has a <code>narration.json</code>: what to say on each slide, plus cues and sync points.</li>
+</ul>
+
+<h2>How it renders</h2>
+<ol>
+<li><b>Voice</b><span>Each slide gets its own clip from ElevenLabs <code>eleven_v4</code>, with timing for every character. ffmpeg speeds it up to 1.1× without changing pitch. Clips are cached, so re-renders cost no credits.</span></li>
+<li><b>Cues</b><span>A spoken phrase is linked to a CSS selector. When that word is said, a cursor glides to the element and a yellow spotlight highlights it.</span></li>
+<li><b>Sync</b><span>Slide animations are time-warped so each step happens on its word, then holds until the next one.</span></li>
+<li><b>Frames</b><span>Headless Chromium (Playwright) steps the GSAP timeline 60 times per second and takes a screenshot each time. This gives exact frames with no screen-recording lag.</span></li>
+<li><b>Encode</b><span>ffmpeg combines each slide's frames with its voice clip, then joins the slides into one MP4 at 1080p60, H.264 with AAC audio.</span></li>
+<li><b>Share copy</b><span>A smaller copy (CRF 25) is made to fit the chat upload limit.</span></li>
+</ol>
+
+<h2>Run it</h2>
+<pre>npm install
+cp .env.example .env              # add ELEVENLABS_API_KEY
+node build.mjs lessons/&lt;lesson&gt; --plan     # voice + cue check
+node build.mjs lessons/&lt;lesson&gt; --preview  # fast draft
+./run-module.sh &lt;lesson&gt; &lt;lesson&gt; ...      # final MP4s</pre>
+<p class="sub" style="margin-top:12px">Fonts and GSAP are stored in <code>vendor/</code>, so rendering works offline.</p>
+</main>
+</body>
+</html>
