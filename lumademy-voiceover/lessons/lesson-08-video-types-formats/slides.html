@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="bn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lesson 08 · Video Types & Formats</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--b1:#1659F5;--b2:#3FA2FF;--ink:#0B1F4D;--mono:ui-monospace,Menlo,Consolas,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--b1);overflow:hidden;color:#fff;font-family:'Hind Siliguri','Noto Sans Bengali',system-ui,sans-serif}
+#stage{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;background:linear-gradient(135deg,var(--b1),var(--b2));overflow:hidden}
+.scene{position:absolute;inset:0;display:none}.scene.on{display:block}.scene>*,.dm>*{position:absolute}
+.card{background:#fff;color:var(--ink);border-radius:44px;box-shadow:0 30px 80px rgba(7,30,110,.35)}
+.chip{left:140px;top:150px;background:rgba(255,255,255,.22);border-radius:99px;padding:10px 30px;font:600 30px 'Space Grotesk',sans-serif;letter-spacing:.06em}
+h1{left:140px;top:250px;width:1250px;font:700 104px/1.08 'Space Grotesk','Hind Siliguri',sans-serif}
+.sub{left:140px;top:640px;width:1100px;font-size:48px;line-height:1.5}
+.ttl{left:140px;top:105px;font:700 74px/1.2 'Hind Siliguri',sans-serif}
+.cap{left:140px;top:890px;font-size:48px;font-weight:600}
+.orb{border-radius:50%;background:rgba(255,255,255,.16)}
+#o1{width:520px;height:520px;right:120px;top:140px}#o2{width:300px;height:300px;right:520px;top:560px;background:rgba(255,255,255,.24)}#o3{width:150px;height:150px;right:150px;top:700px;background:#fff}
+.cs{left:140px;right:140px;top:290px;display:flex;gap:44px}
+.lc{flex:1;height:500px;padding:44px 36px}
+.num{width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,var(--b1),var(--b2));color:#fff;font:700 46px/84px 'Space Grotesk';text-align:center}
+.lc h2{font:700 70px 'Space Grotesk';margin:26px 0 4px}.lc h2:first-child{margin-top:0}
+.n4 .lc h2{font-size:56px}.n5 .lc h2{font-size:40px}.n5 .lc{padding:36px 26px}.n5 .lc p{font-size:38px}.n5 .lc small{font-size:28px}
+.lc p{font-size:46px;font-weight:600;color:var(--b1)}
+.lc small{display:block;font-size:34px;margin-top:10px;opacity:.75}
+.tag{display:inline-block;margin-top:30px;background:var(--ink);color:#fff;border-radius:99px;padding:6px 26px;font:600 32px 'Space Grotesk'}
+.cs.s .lc{height:250px;padding:36px 40px}.cs.s .lc h2{font-size:58px;margin:0}
+.nx{left:140px;top:640px;width:1640px;height:200px;padding:36px 60px}
+.nx small{font:600 34px 'Hind Siliguri';color:var(--b1)}.nx h2{font:700 70px 'Space Grotesk'}
+.L{left:140px;top:230px;width:900px;height:600px;padding:24px}
+.R{left:1100px;top:230px;width:680px;height:600px;padding:50px}
+.p{padding:50px}.card svg{width:100%;height:100%}
+.lbl{font:600 30px 'Hind Siliguri';color:var(--b1);margin-bottom:24px}
+#ty{font:500 46px/1.5 'Space Grotesk',sans-serif}
+.rw{margin-bottom:34px}.rw code{display:block;font:500 38px/1.6 var(--mono)}.rw b{color:var(--b1)}.rw span{font:600 36px 'Hind Siliguri';color:#E8590C}
+.W{left:140px;top:250px;width:1640px;height:260px}
+.W:before{content:"";position:absolute;left:100px;right:100px;top:127px;height:6px;border-radius:3px;background:#D6E6FF}
+.dotb{position:absolute;width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--b1),var(--b2));left:100px;top:98px}
+.rr{left:140px;top:570px;display:flex;align-items:baseline;gap:30px}
+.rr em{font:600 44px 'Space Grotesk';font-style:normal;opacity:.85}.rr span{font:700 150px/1 var(--mono)}
+.sl{left:760px;top:670px;width:1000px;height:40px;accent-color:#fff;cursor:pointer}
+.rw.f{display:flex;align-items:baseline;gap:24px;margin-bottom:28px}.rw.f code{display:inline}
+.rw.s{padding:6px 14px;margin-bottom:20px;border-radius:16px;transition:background .3s}.rw.s code{font-size:34px;line-height:1.4}.rw.s span{display:block;font-size:32px}.rw.s.on{background:#EAF3FF}.p2{padding:36px 40px}
+.RW{left:140px;top:230px;width:1640px;height:600px;padding:34px 50px;display:flex;flex-direction:column;justify-content:space-around}
+.tr{position:relative;height:100px;display:flex;align-items:center}.tr em{width:520px;font:700 40px 'Space Grotesk';font-style:normal;color:var(--ink)}
+.tr em small{display:block;font:600 28px 'Hind Siliguri';color:var(--b1)}.rail{position:relative;flex:1;height:6px;border-radius:3px;background:#D6E6FF}.tr .dotb{left:0;top:-29px}
+.W2{left:140px;top:230px;width:1640px;height:600px;padding:36px 50px}.stg{position:relative;height:300px}.stg svg{width:100%;height:100%}
+.ct{position:absolute;right:20px;top:14px;font:600 40px 'Hind Siliguri'}.ct b{color:var(--b1)}
+.strip{display:flex;gap:10px;justify-content:space-between;margin-top:26px}
+.fr{position:relative;width:150px;height:96px;border:4px solid #D6E6FF;border-radius:14px;background:#fff;transition:.15s}.fr.on{border-color:var(--b1);background:#EAF3FF}
+.fr i{position:absolute;left:8px;bottom:2px;font:600 22px 'Space Grotesk';font-style:normal}
+.cc{display:flex;flex-direction:column;justify-content:center}.eq{display:flex;align-items:baseline;gap:18px;font-size:44px;margin:30px 0}
+.eq b{font:700 100px 'Space Grotesk';color:var(--b1)}.eq u{text-decoration:none;font:700 70px 'Space Grotesk'}
+.V{top:230px;width:800px;height:600px;padding:34px 40px}.vl{left:140px}.vr{left:980px}
+.vt{display:inline-block;border-radius:99px;padding:6px 24px;font:600 30px 'Hind Siliguri';margin-bottom:18px}.vt.bad{background:#FDE2E2;color:#B42318}.vt.good{background:#DCFCE7;color:#15803D}
+.vp{font:600 34px/1.5 'Hind Siliguri';color:var(--ink);min-height:165px}.V svg{height:280px}
+.rw.s.fx{display:flex;gap:20px;align-items:baseline}.rw.s.fx span{display:inline;width:150px;font-size:30px}.rw.s.fx code{font:500 30px 'Hind Siliguri',monospace}
+.tp{display:flex;flex-direction:column;justify-content:center}.tp .rw.s.fx span{width:260px;font-size:38px}.tp .rw.s.fx code{font-size:38px}
+.ds{display:flex;flex-direction:column;gap:18px;align-items:flex-start;justify-content:center;padding:20px 10px;min-height:420px}.ds.g{gap:4px}
+.cg{left:140px;top:230px;width:1640px;height:600px;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.cb{display:flex;flex-direction:column;justify-content:center;gap:12px;padding:30px 44px;border:3px solid #E2E8F0}.cb b{font:700 52px Hind Siliguri,sans-serif}
+.cb em{font:700 34px Hind Siliguri,sans-serif;font-style:normal}.cb em.ok{color:#15803D}.cb em.no{color:#B42318}.cb small{font:600 28px Hind Siliguri,sans-serif;color:#64748B}
+.sc{display:flex;flex-direction:column;justify-content:center;gap:40px}.sw{display:flex;gap:60px}.sw>div{display:flex;align-items:center;gap:20px}
+.sw i{width:110px;height:110px;border-radius:50%;display:block}.sw span{font:600 30px/1.4 Hind Siliguri,sans-serif}
+.sr .rw.s.fx span{width:150px;font-size:34px}.sr .rw.s.fx code{font-size:34px}
+.gal{left:140px;top:230px;width:1640px;height:600px;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:24px}
+.tile{position:relative;border-radius:28px;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:16px}
+.tile .nm{position:absolute;left:14px;top:12px;background:#fff;color:#0B1F4D;border-radius:99px;padding:4px 18px;font:700 26px Space Grotesk,sans-serif}
+.tile .sd{position:absolute;left:14px;bottom:12px;background:rgba(11,31,77,.85);color:#fff;border-radius:99px;padding:2px 16px;font:600 24px Hind Siliguri,sans-serif;font-style:normal}
+.ms{left:140px;top:230px;width:1640px;height:600px;display:flex;gap:20px}
+.mt{flex:1;background:#0B1F4D;border-radius:28px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:20px 12px 28px;text-align:center}
+.mv{flex:1;display:flex;align-items:center;justify-content:center;width:100%}.mt b{font:700 40px Space Grotesk,sans-serif}.mt span{font:600 28px Hind Siliguri,sans-serif;color:#9CC4FF}
+.k{display:flex;gap:6px;font:700 60px Space Grotesk,sans-serif}.gl{position:relative;width:100%;height:80px}
+.gl u{position:absolute;left:0;right:0;text-align:center;text-decoration:none;font:700 52px Space Grotesk,sans-serif}
+.gl u:nth-child(1){color:#fff}.gl u:nth-child(2){color:#22D3EE;mix-blend-mode:screen}.gl u:nth-child(3){color:#F472B6;mix-blend-mode:screen}
+.px{position:relative;width:200px;height:180px}.px i{position:absolute;border-radius:18px}
+.px i:nth-child(1){left:20px;top:10px;width:160px;height:150px;background:#1D4ED8}.px i:nth-child(2){left:50px;top:50px;width:120px;height:110px;background:#3FA2FF}.px i:nth-child(3){left:80px;top:90px;width:80px;height:70px;background:#fff}
+.pt{position:relative;width:100%;height:200px}.pt s{position:absolute;bottom:0;width:10px;height:10px;border-radius:50%;background:#fff}
+.lq{width:150px;height:150px;background:#3FA2FF;border-radius:50%}
+.li{font:600 36px/1.4 Hind Siliguri,sans-serif;color:var(--ink);margin-bottom:14px}
+.rt{left:140px;top:240px;width:1640px;height:580px;display:flex;justify-content:space-around;align-items:flex-end}
+.rf{display:flex;flex-direction:column;align-items:center;gap:6px}.fr2{background:#fff;border-radius:22px;position:relative;overflow:hidden;box-shadow:0 20px 50px rgba(7,30,110,.35)}
+.fr2 i{position:absolute;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--b1),var(--b2));left:16px;top:16px}
+.rf b{font:700 56px Space Grotesk,sans-serif}.rf span{font:600 36px Hind Siliguri,sans-serif}.rf small{font:500 28px var(--mono);opacity:.85}
+.sg{display:flex;flex-direction:column;justify-content:center;gap:50px}.bar{position:relative;display:flex;height:170px;border-radius:24px;overflow:hidden}
+.bar>div:not(.ph){display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font:700 40px Hind Siliguri,sans-serif;text-align:center}
+.bar small{font:600 26px Space Grotesk,sans-serif}.s1{width:10%;background:#E8590C}.s2{width:73.33%;background:#1659F5}.s3{width:16.67%;background:#12A150}
+.ph{position:absolute;top:0;bottom:0;width:6px;background:#0B1F4D;left:0}
+.nt{display:flex;justify-content:space-between;font:600 34px Hind Siliguri,sans-serif;color:var(--ink)}.nt b{color:var(--b1)}
+.bd{display:flex;gap:20px;align-items:center}
+.pn{flex:1;border:4px solid #D6E6FF;border-radius:20px;padding:14px;text-align:center;background:#F8FAFC;height:430px}
+.pn svg{width:100%;height:190px;background:#fff;border-radius:12px}
+.pn b{display:block;font:700 40px Space Grotesk,sans-serif;margin-top:12px;color:var(--b1)}.pn span{display:block;font:600 32px Hind Siliguri,sans-serif;color:var(--ink);margin-top:6px}.pn small{display:block;font:600 26px Space Grotesk,sans-serif;color:#64748B;margin-top:6px}
+.bnw{display:flex;justify-content:center;align-items:center;height:280px;font:700 100px Hind Siliguri,sans-serif;color:#1659F5}.bnw span{display:inline-block;margin:0 6px}.bnw.sp span{margin:0 16px}
+.rdw{height:280px;display:flex;align-items:center;justify-content:center;font:700 90px Hind Siliguri,sans-serif;color:#1659F5}
+
+/* ---- added (Module 2 video) ---- */
+.zl{display:flex;align-items:center;gap:30px;padding:20px 50px}.zl svg{width:720px;height:540px;flex:none}
+.zfb{display:flex;flex-direction:column;gap:24px}.zfh{font:700 40px 'Hind Siliguri';color:var(--ink)}
+.zb{font:600 36px/1.45 'Hind Siliguri';border-radius:22px;padding:18px 24px}.zb.no{background:#FDE2E2;color:#B42318}.zb.ok{background:#DCFCE7;color:#14532D}.zb i{font-style:normal;font-weight:700;margin-right:10px}
+.zfm{display:flex;flex-direction:column;gap:16px;margin-top:28px;color:var(--ink)}
+.zfg{margin-top:28px}.zh{font:700 72px/1.2 'Hind Siliguri';color:var(--ink)}.zbd{font:400 38px 'Hind Siliguri';color:#334155;margin-top:6px}.zen{font:700 40px 'Space Grotesk';color:var(--b1);margin-top:16px}
+.zlb{display:flex;flex-direction:column;gap:10px;margin-top:28px}.zlb span{font:600 28px 'Hind Siliguri';background:#EAF3FF;color:var(--b1);border-radius:12px;padding:6px 16px;align-self:flex-start}
+.z6{display:flex;align-items:center;gap:50px;padding:40px 60px}.z6l{flex:1}
+.z6b{display:flex;height:120px;border-radius:20px;overflow:hidden;border:2px solid #E2E8F0}.z6b i{display:flex;align-items:center;justify-content:center;font:700 40px 'Space Grotesk';font-style:normal;color:#fff;transform-origin:0 50%}
+.z6k{display:flex;flex-direction:column;gap:22px;margin-top:40px}.z6k>div{display:flex;align-items:center;gap:18px}.z6k s{width:56px;height:56px;border-radius:14px;flex:none;text-decoration:none}.z6k b{font:700 38px 'Hind Siliguri';color:var(--ink);width:250px}.z6k span{font:600 32px 'Hind Siliguri';color:#475569}
+.z6p{position:relative;width:560px;height:480px;border-radius:28px;background:#F1F5FF;overflow:hidden;flex:none;border:2px solid #E2E8F0}
+.zp3{background:#1659F5;color:#fff;height:150px;display:flex;align-items:center;padding:0 36px;font:700 50px 'Hind Siliguri'}
+.zpl{height:22px;border-radius:11px;background:#0B1F4D;opacity:.75;margin:40px 36px 0;width:70%}.zpl.zs2{width:50%;margin-top:22px}
+.zp1{position:absolute;left:36px;bottom:40px;background:#E8590C;color:#fff;font:700 36px 'Hind Siliguri';border-radius:99px;padding:12px 34px}
+.z3{left:140px;top:230px;width:1640px;height:600px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.z3c{display:flex;flex-direction:column;gap:14px}.z3c>b{font:700 40px 'Space Grotesk';color:#fff;text-align:center}
+.z3f{position:relative;flex:1;border-radius:28px;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;box-shadow:0 20px 50px rgba(7,30,110,.3)}
+.z3f>em{position:absolute;border-radius:50%;display:block}
+.zrw{left:140px;top:230px;width:1640px;height:600px;display:flex;justify-content:space-around;align-items:center}
+.zrc{display:flex;flex-direction:column;align-items:center;gap:14px}.zrc b{font:700 44px 'Space Grotesk';color:#fff}.zrc span{font:600 30px 'Hind Siliguri';color:#DBEAFE}
+.zrf{position:relative;background:#fff;border-radius:22px;box-shadow:0 20px 50px rgba(7,30,110,.35)}.zrf em{position:absolute;display:block;border-radius:12px}
+.zrf .zlo{border-radius:50%;background:linear-gradient(135deg,#1659F5,#3FA2FF)}.zrf .zt1{background:#0B1F4D}.zrf .zt2{background:#94A3B8}.zrf .zbt{background:#E8590C;border-radius:99px}
+.zsz{left:140px;top:215px;width:1640px;height:630px;display:flex;align-items:center;gap:80px;justify-content:center}
+.zph{position:relative;width:340px;height:604px;border-radius:40px;background:linear-gradient(160deg,#0B1F4D,#1659F5);border:8px solid #0B1F4D;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.35);flex:none}
+.zsc{position:absolute;left:8%;top:14%;width:70%;height:64%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#fff;text-align:center}
+.zsc em{display:block;width:110px;height:110px;border-radius:50%;background:#fff}.zsc b{font:700 40px 'Hind Siliguri'}.zsc span{font:600 26px 'Hind Siliguri';color:#FFD84D}
+.zz{position:absolute;background:rgba(239,68,68,.55);display:flex;align-items:center;justify-content:center;text-align:center;padding:6px}.zz span{font:700 20px/1.3 'Hind Siliguri';color:#fff}
+.zz.ztop{left:0;right:0;top:0;height:10%}.zz.zrt{right:0;width:21%;top:44%;height:38%}.zz.zbtm{left:0;right:0;bottom:0;height:16%}
+.zsa{position:absolute;left:5%;top:12%;width:72%;height:68%;border:4px dashed #4ADE80;border-radius:18px}.zsa span{position:absolute;left:8px;top:6px;background:#16A34A;color:#fff;font:700 20px 'Hind Siliguri';border-radius:8px;padding:2px 10px}
+.zsl{position:relative;width:820px;padding:40px 46px}.zsl .li{font:600 38px/1.5 'Hind Siliguri';margin-bottom:22px;color:var(--ink)}
+.zhk{left:140px;top:215px;width:1640px;height:630px;display:flex;justify-content:center;gap:180px}
+.zhc{display:flex;flex-direction:column;align-items:center;gap:14px}
+.zph2{position:relative;width:290px;height:516px;border-radius:36px;background:#0B1F4D;border:8px solid #000;overflow:hidden;display:flex;align-items:center;justify-content:center;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.zw{font:600 26px/1.5 'Hind Siliguri';color:#CBD5E1;padding:30px}.zs3{text-align:center}.zs3 b{display:block;font:700 62px/1.2 'Hind Siliguri';color:#FFD84D}.zs3 span{font:700 50px 'Hind Siliguri';color:#fff}
+.zpb{position:absolute;left:16px;right:16px;bottom:18px;height:8px;border-radius:4px;background:rgba(255,255,255,.25)}.zpb i{display:block;height:100%;width:0;border-radius:4px;background:#fff}
+.zres{font:700 32px 'Hind Siliguri';border-radius:16px;padding:6px 20px}.zres.bad{background:#FDE2E2;color:#B42318}.zres.good{background:#DCFCE7;color:#15803D}
+#brand{left:140px;bottom:44px;position:absolute;font:700 38px 'Space Grotesk';display:flex;align-items:center;gap:14px}
+#brand:before{content:"";width:22px;height:22px;border-radius:50%;background:#fff}
+#info{right:140px;bottom:50px;position:absolute;font:500 28px 'Space Grotesk';opacity:.8}
+#dots{position:absolute;left:50%;bottom:52px;transform:translateX(-50%);display:flex;gap:14px}
+#dots b{width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,.35);transition:.3s}
+#dots b.on{background:#fff;width:42px;border-radius:8px}
+#sp{position:fixed;left:0;right:0;bottom:0;background:rgba(11,31,77,.94);color:#fff;padding:2vmin 4vw;font-size:2.4vmin;line-height:1.6;display:none;z-index:9;white-space:pre-line}
+</style></head><body>
+<div id="stage"><div id="brand">Lumademy</div><div id="info">AI Motion Graphics Crash Course · Lesson 08</div><div id="dots"></div></div>
+<div id="sp"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>const L={"title": "Video Types & Formats", "scenes": [{"k": "title", "chip": "LESSON 08 · PART B", "h": "Video Types & Formats", "sub": "কোন ধরন, কোন মাপ, কত সেকেন্ড", "say": "আসসালামু আলাইকুম। আজ ঠিক করব, আপনি কী ধরনের ভিডিও বানাচ্ছেন। একই লোগো দিয়ে ইউটিউবের ভিডিও আর Reel একরকম হয় না। মাপ আলাদা, সময় আলাদা, কাঠামোও আলাদা। আজ এই তিনটা ঠিক করা শিখব।", "note": "ধীরে শুরু।"}, {"k": "demo", "d": "ratios", "t": "তিনটা মাপ", "cap": "ফ্রেম আলাদা হলে ডিজাইনও আলাদা ভাবতে হয়", "say": "প্রথমে মাপ। YouTube-এর ভিডিও শোয়ানো, ষোলো বাই নয়, মানে উনিশশো বিশ বাই এক হাজার আশি। Reel বা Story দাঁড়ানো, নয় বাই ষোলো, মানে এক হাজার আশি বাই উনিশশো বিশ। আর ফিডের জন্য চৌকো, এক বাই এক। বিন্দুটা দেখুন, প্রতিটা ফ্রেমে নিজের মতো করে চলছে। ফ্রেম আলাদা হলে ডিজাইনও আলাদা ভাবতে হয়।", "note": "তিনটা ফ্রেমের নাম আর মাপ আলাদা করে বলুন।"}, {"k": "demo", "d": "reflow", "t": "এক design, তিন মাপে", "cap": "মাপ বদলালে সাজানোও বদলায়", "say": "", "note": ""}, {"k": "demo", "d": "safez", "t": "Reel-এর নিরাপদ জায়গা", "cap": "জরুরি জিনিস মাঝখানে রাখুন", "say": "", "note": ""}, {"k": "demo", "d": "tmpl", "t": "ছয়টা সাধারণ ধরন", "cap": "সময় সাধারণ নির্দেশনা, নিজের কাজ অনুযায়ী বদলান", "rows": [["Logo reveal", "৫-১০ সে, লোগো আসে, স্থির হয়"], ["Kinetic", "১৫-৩০ সে, লেখাই বার্তা বহন করে"], ["Product promo", "২০-৪০ সে, সমস্যা, সমাধান, CTA"], ["Explainer", "৩০-৯০ সে, ধারণা ভেঙে দেখানো"], ["Social reel", "১৫-৩০ সে, প্রথম ২ সেকেন্ডে hook"], ["সংখ্যা", "১০-২০ সে, সংখ্যা বাড়ে, ফল দেখায়"]], "say": "এবার ধরন। ছয়টা সাধারণ ধরন, আর প্রতিটার সাধারণ সময় আর কাঠামো। Logo reveal, পাঁচ থেকে দশ সেকেন্ড, লোগো আসে, স্থির হয়। Kinetic typography, লেখাই বার্তা বহন করে। Product promo, সমস্যা, সমাধান, তারপর কী করতে হবে। Explainer, কোনো ধারণা ভেঙে দেখানো। Social reel, প্রথম দুই সেকেন্ডে নজর কাড়তে হয়। আর সংখ্যার animation, সংখ্যা বাড়ে, ফল দেখায়। সময়গুলো সাধারণ নির্দেশনা, নিজের কাজ অনুযায়ী বদলাতে পারেন।", "note": "ছয়টা সারি এক এক করে আসবে, তাড়াহুড়ো নয়।"}, {"k": "cards", "t": "কোনটা কখন?", "items": [{"h": "পরিচিতি", "p": "Logo reveal", "s": "ব্র্যান্ডকে পরিচিত করাতে"}, {"h": "বিক্রি", "p": "Product promo", "s": "কিছু বিক্রি করতে"}, {"h": "বোঝানো", "p": "Explainer", "s": "কিছু বোঝাতে"}, {"h": "নজর কাড়া", "p": "Social reel", "s": "দ্রুত চোখ ধরতে"}], "say": "কোনটা কখন? নিজেকে জিজ্ঞেস করুন, আমি কী চাই। ব্র্যান্ডকে পরিচিত করাতে চাইলে Logo reveal। কিছু বিক্রি করতে চাইলে Product promo। কিছু বোঝাতে চাইলে Explainer। আর দ্রুত নজর কাড়তে চাইলে Social reel। চাওয়াটা আগে, ধরন পরে।", "note": "প্রশ্নটা বলে এক সেকেন্ড থামুন।"}, {"k": "demo", "d": "tmpl", "t": "prompt-এ বসানো", "cap": "তিন লাইনেই AI অনেক কিছু বোঝে", "rows": [["ধরন", "Product promo, ২৫ সেকেন্ড"], ["মাপ", "1080×1920 (Reel), 30 fps"], ["কাঠামো", "প্রথম ২ সেকেন্ডে hook, শেষে CTA"]], "say": "এবার এটা prompt-এ বসান। ধরন: Product promo, পঁচিশ সেকেন্ড। মাপ: এক হাজার আশি বাই উনিশশো বিশ, ত্রিশ fps। কাঠামো: প্রথম দুই সেকেন্ডে hook, শেষে CTA। তিন লাইনেই AI অনেক কিছু বুঝে গেল।", "note": "তিন লাইন পড়ে শেষে হাসুন।"}, {"k": "cards", "t": "আজ আমরা শিখলাম", "next": "Script & Storyboard", "items": [{"h": "মাপ", "p": "১৬:৯, ৯:১৬, ১:১"}, {"h": "ধরন", "p": "ছয়টা সাধারণ ধরন"}, {"h": "চাওয়া আগে", "p": "ধরন পরে"}], "say": "তাহলে আজ কী শিখলাম? তিনটা মাপ: ষোলো বাই নয়, নয় বাই ষোলো, এক বাই এক। ছয়টা সাধারণ ধরন। আর আগে নিজের চাওয়া, তারপর ধরন। পরের ক্লাসে ভিডিওর গল্প সাজাব, মানে script আর storyboard।", "note": "পরের ক্লাসের আগ্রহ জাগান।"}]};
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const st=$('#stage'),dots=$('#dots'),sp=$('#sp');
+const F=(m,t)=>t.fromTo(m.children,{y:60,opacity:0},{y:0,opacity:1,duration:.7,stagger:.15,ease:'power3.out'});
+const at=(m,s,o)=>{const e=$(s,m);for(const k in o)e.setAttribute(k,o[k])};
+const D={
+reflow(m,t){const L=[['16:9','পাশাপাশি সাজানো',600,338,[50,99,140,140],[230,110,300,34],[230,162,220,20],[230,214,150,46]],['9:16','ওপর থেকে নিচে',230,409,[65,60,100,100],[30,190,170,26],[45,230,140,16],[55,320,120,40]],['1:1','মাঝখানে',360,360,[125,50,110,110],[60,190,240,28],[90,232,180,18],[110,280,140,42]]],
+ bx=(a,c)=>'<em class="'+c+'" style="left:'+a[0]+'px;top:'+a[1]+'px;width:'+a[2]+'px;height:'+a[3]+'px"></em>';
+ m.innerHTML='<div class="zrw">'+L.map(l=>'<div class="zrc"><div class="zrf" style="width:'+l[2]+'px;height:'+l[3]+'px">'+bx(l[4],'zlo')+bx(l[5],'zt1')+bx(l[6],'zt2')+bx(l[7],'zbt')+'</div><b>'+l[0]+'</b><span>'+l[1]+'</span></div>').join('')+'</div>';
+ F(m,t);$$('.zrc',m).forEach((e,k)=>{t.fromTo(e,{y:50,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out'},1.5+k).fromTo(e.querySelectorAll('em'),{scale:0,opacity:0},{scale:1,opacity:1,duration:.4,stagger:.12,ease:'back.out(2)'},1.8+k)})},
+safez(m,t){m.innerHTML='<div class="zsz"><div class="zph"><div class="zsc"><em></em><b>নতুন কোর্স</b><span>৫০% ছাড়, আজই</span></div><div class="zz ztop"><span>ওপরের bar</span></div><div class="zz zrt"><span>বাটন</span></div><div class="zz zbtm"><span>caption আর নাম</span></div><div class="zsa"><span>নিরাপদ জায়গা</span></div></div><div class="card zsl"><div class="li">✓ জরুরি লেখা আর logo মাঝখানে</div><div class="li">✗ ডান পাশে আর নিচে জরুরি কিছু নয়</div><div class="li">✓ A.I.-কে বলুন: Reel-এর safe zone মেনে লেখা বসাও</div></div></div>';
+ F(m,t);['.ztop','.zrt','.zbtm'].forEach((q,k)=>t.fromTo($(q,m),{opacity:0},{opacity:1,duration:.4},1.5+k*.8));t.fromTo($('.zsa',m),{opacity:0,scale:.9},{opacity:1,scale:1,duration:.5,ease:'back.out(1.6)'},4.0).fromTo($$('.zsl .li',m),{x:-30,opacity:0},{x:0,opacity:1,duration:.4,stagger:.8},4.6)},
+prompt(m,t){m.innerHTML='<div class="card L p"><div class="lbl">আপনি লিখলেন</div><div id="ty"></div></div><div class="card R"><svg viewBox="0 0 400 360"><circle id="rg" cx="200" cy="170" r="110" fill="none" stroke="#1659F5" stroke-width="16" stroke-linecap="round" stroke-dasharray="692" stroke-dashoffset="692" transform="rotate(-90 200 170)"/><circle id="fc" cx="200" cy="170" r="0" fill="#1659F5"/><text id="lt" x="200" y="212" text-anchor="middle" font-size="120" font-weight="700" fill="#fff" font-family="Space Grotesk,sans-serif" opacity="0">L</text><text x="200" y="335" text-anchor="middle" font-size="28" fill="#0B1F4D">AI বানাল</text></svg></div>';
+ F(m,t);const P='Make a 5-second logo reveal. Blue and white.',o={n:0},y=$('#ty',m);
+ t.to(o,{n:P.length,duration:2.2,ease:'none',onUpdate:()=>{y.textContent=P.slice(0,Math.round(o.n))}})
+  .fromTo($('#rg',m),{strokeDashoffset:692},{strokeDashoffset:0,duration:1.2,ease:'power2.inOut'})
+  .fromTo($('#fc',m),{attr:{r:0}},{attr:{r:98},duration:.6,ease:'back.out(1.7)'},'-=.2')
+  .fromTo($('#lt',m),{opacity:0,scale:.3,svgOrigin:'200 170'},{opacity:1,scale:1,svgOrigin:'200 170',duration:.5,ease:'back.out(2)'},'-=.3')},
+scrub(m,t){m.innerHTML='<div class="card W"><div class="dotb" id="dt"></div></div><div class="rr"><em>progress</em><span id="rd">0.00</span></div><input class="sl" id="sl" type="range" min="0" max="1" step="0.01" value="0">';
+ F(m,t);const P={v:0},d=$('#dt',m),r=$('#rd',m),s=$('#sl',m),u=()=>{gsap.set(d,{x:P.v*1380});r.textContent=P.v.toFixed(2);s.value=P.v};u();
+ const g=gsap.to(P,{v:1,duration:3,ease:'none',onUpdate:u,repeat:-1,repeatDelay:.8});t.add(g);s.oninput=()=>{g.pause();P.v=+s.value;u()}},
+viewbox(m,t){m.innerHTML='<div class="card L"><svg id="sv" viewBox="0 0 400 300"><rect width="400" height="300" fill="#EAF3FF"/><rect x="40" y="50" width="150" height="90" rx="12" fill="#1659F5"/><circle cx="280" cy="110" r="50" fill="#E8590C"/><line x1="40" y1="200" x2="360" y2="200" stroke="#0B1F4D" stroke-width="6" stroke-linecap="round"/><text x="200" y="262" text-anchor="middle" font-size="40" font-weight="700" fill="#0B1F4D" font-family="Space Grotesk,sans-serif">Hello</text></svg></div><div class="card R"><div class="rw"><code>viewBox="<b id="vv">0 0 400 300</b>"</code><span>ক্যামেরার ফ্রেম</span></div></div>';
+ F(m,t);const o={x:0,y:0,w:400,h:300},s=$('#sv',m),v=$('#vv',m),u=()=>{const a=[o.x,o.y,o.w,o.h].map(Math.round).join(' ');s.setAttribute('viewBox',a);v.textContent=a};
+ t.to(o,{x:150,y:40,w:160,h:120,duration:1.8,ease:'power2.inOut',yoyo:true,repeat:-1,repeatDelay:.8,onUpdate:u})},
+paint(m,t){m.innerHTML='<div class="card L"><svg viewBox="0 0 300 300"><circle id="pc" cx="150" cy="150" r="90" fill="#1659F5" stroke="#E8590C" stroke-width="12"/></svg></div><div class="card R"><div class="rw"><code>fill="<b>#1659F5</b>"</code><span>ভেতরের রং</span></div><div class="rw"><code>stroke="<b>#E8590C</b>"</code><span>কিনারার রং</span></div><div class="rw"><code>stroke-width="<b id="sw">12</b>"</code><span>কিনারা কত মোটা</span></div></div>';
+ F(m,t);const o={w:12},c=$('#pc',m),s=$('#sw',m);
+ t.to(o,{w:34,duration:1.4,ease:'sine.inOut',yoyo:true,repeat:-1,onUpdate:()=>{c.setAttribute('stroke-width',o.w);s.textContent=Math.round(o.w)}})},
+path(m,t){m.innerHTML='<div class="card L"><svg viewBox="0 0 400 300"><path id="pp" fill="none" stroke="#1659F5" stroke-width="10" stroke-linecap="round"/><g stroke="#E8590C" stroke-width="3" stroke-dasharray="6 6"><line id="h1"/><line id="h2"/></g><circle id="k1" r="9" fill="#E8590C"/><circle id="k2" r="9" fill="#E8590C"/><circle cx="60" cy="230" r="9" fill="#0B1F4D"/><circle cx="340" cy="230" r="9" fill="#0B1F4D"/></svg></div><div class="card R"><div class="rw"><code>d="M 60 230<br>C 120 <b id="py">230</b><br>&nbsp;&nbsp;280 <b id="py2">230</b><br>&nbsp;&nbsp;340 230"</code><span>শুধু এই সংখ্যা বদলাচ্ছে</span></div></div>';
+ F(m,t);const o={y:230},u=()=>{const y=Math.round(o.y);at(m,'#pp',{d:'M60 230 C120 '+y+' 280 '+y+' 340 230'});at(m,'#h1',{x1:60,y1:230,x2:120,y2:y});at(m,'#h2',{x1:340,y1:230,x2:280,y2:y});at(m,'#k1',{cx:120,cy:y});at(m,'#k2',{cx:280,cy:y});$('#py',m).textContent=y;$('#py2',m).textContent=y};u();
+ t.to(o,{y:20,duration:1.8,ease:'sine.inOut',yoyo:true,repeat:-1,repeatDelay:.4,onUpdate:u})},
+logo(m,t,s){const R=[['circle r="<b id="v0">110</b>" fill="<b id="c0">#1659F5</b>"','বড় গোল'],['text size="<b id="v1">120</b>" fill="#fff"','ভেতরের অক্ষর'],['rect width="<b id="v2">160</b>" fill="#E8590C"','নিচের দাগ']];
+ m.innerHTML='<div class="card L"><svg viewBox="0 0 400 360"><circle id="g0" cx="200" cy="170" r="110" fill="#1659F5"/><text id="g1" x="200" y="170" dy=".35em" text-anchor="middle" font-size="120" font-weight="700" fill="#fff" font-family="Space Grotesk,sans-serif">L</text><rect id="g2" x="120" y="310" width="160" height="14" rx="7" fill="#E8590C"/></svg></div><div class="card R p2">'+R.map((x,k)=>'<div class="rw s" id="st'+k+'"><code>'+x[0]+'</code><span>'+x[1]+'</span></div>').join('')+'</div>';
+ F(m,t);const o={r:110,s:120,w:160},u=()=>{at(m,'#g0',{r:o.r});at(m,'#g1',{'font-size':o.s});at(m,'#g2',{width:o.w,x:200-o.w/2});$('#v0',m).textContent=Math.round(o.r);$('#v1',m).textContent=Math.round(o.s);$('#v2',m).textContent=Math.round(o.w)};
+ const hl=k=>t.call(()=>{for(let j=0;j<3;j++){$('#st'+j,m).classList.toggle('on',j==k);$('#g'+j,m).setAttribute('opacity',k<0||j==k?1:.2)}});
+ if(s.mode=='read'){hl(0);t.to({},{duration:2.2});hl(1);t.to({},{duration:2.2});hl(2);t.to({},{duration:2.2});hl(-1)}
+ else{hl(-1);t.to({},{duration:1});t.call(()=>{$('#g0',m).setAttribute('fill','#12A150');$('#c0',m).textContent='#12A150'});t.to(o,{r:75,s:80,w:250,duration:1.8,ease:'power2.inOut',yoyo:true,repeat:-1,repeatDelay:.8,onUpdate:u})}},
+race(m,t){const E=[['Linear','যান্ত্রিক, একই গতি','none'],['Smooth','মসৃণ, ধীরে শুরু ও শেষ','power2.inOut'],['Snappy','ঝটপট শুরু, নরম শেষ','expo.out'],['Bouncy','একটু পেরিয়ে ফেরে','back.out(2.5)']];
+ m.innerHTML='<div class="card RW">'+E.map(e=>'<div class="tr"><em>'+e[0]+'<small>'+e[1]+'</small></em><div class="rail"><div class="dotb"></div></div></div>').join('')+'</div>';
+ F(m,t);const d=$$('.dotb',m);E.forEach((e,k)=>t.fromTo(d[k],{x:0},{x:950,duration:1.6,ease:e[2],repeat:-1,yoyo:true,repeatDelay:.7},k?'<':undefined))},
+dur(m,t){const E=[['০.৩ সেকেন্ড','ঝটকা, চোখ ধরতে পারে না',.3],['০.৮ সেকেন্ড','স্বাভাবিক, আরামদায়ক',.8],['২.৫ সেকেন্ড','ধীর, ঘুম পায়',2.5]];
+ m.innerHTML='<div class="card RW">'+E.map(e=>'<div class="tr"><em>'+e[0]+'<small>'+e[1]+'</small></em><div class="rail"><div class="dotb"></div></div></div>').join('')+'</div>';
+ F(m,t);const d=$$('.dotb',m);E.forEach((e,k)=>t.fromTo(d[k],{x:0},{x:950,duration:e[2],ease:'power2.inOut',repeat:-1,repeatDelay:3.6-e[2]},k?'<':undefined))},
+frames(m,t){const N=10;let th='';for(let k=0;k<N;k++)th+='<div class="fr" id="f'+k+'"><svg viewBox="0 0 100 60"><circle cx="'+(12+k*8.5)+'" cy="30" r="8" fill="#1659F5"/></svg><i>'+(k+1)+'</i></div>';
+ m.innerHTML='<div class="card W2"><div class="stg"><svg viewBox="0 0 1000 200"><rect width="1000" height="200" rx="20" fill="#EAF3FF"/><circle id="bd" cx="60" cy="100" r="40" fill="#1659F5"/></svg><div class="ct">ফ্রেম <b id="cn">1</b> / '+N+'</div></div><div class="strip">'+th+'</div></div>';
+ F(m,t);const o={n:0},u=()=>{const k=Math.round(o.n);at(m,'#bd',{cx:60+k*(880/(N-1))});$('#cn',m).textContent=k+1;for(let j=0;j<N;j++)$('#f'+j,m).classList.toggle('on',j==k)};u();
+ t.to(o,{n:N-1,duration:3.6,ease:'none',repeat:-1,repeatDelay:.6,onUpdate:u})},
+fps(m,t){const E=[['6 fps','ঝাঁকুনি','steps(12)'],['12 fps','পুরোনো কার্টুনের মতো','steps(24)'],['30 fps','সাধারণ ভিডিও','steps(60)'],['60 fps','একদম মসৃণ','steps(120)']];
+ m.innerHTML='<div class="card RW">'+E.map(e=>'<div class="tr"><em>'+e[0]+'<small>'+e[1]+'</small></em><div class="rail"><div class="dotb"></div></div></div>').join('')+'</div>';
+ F(m,t);const d=$$('.dotb',m);E.forEach((e,k)=>t.fromTo(d[k],{x:0},{x:950,duration:2,ease:e[2],repeat:-1,yoyo:true,repeatDelay:.6},k?'<':undefined))},
+count(m,t){const r=(f,id)=>'<div class="eq"><b>30</b><span>সেকেন্ড</span><u>×</u><b>'+f+'</b><span>fps</span><u>=</u><b id="'+id+'">0</b><span>ছবি</span></div>';
+ m.innerHTML='<div class="card W2 cc">'+r(30,'n1')+r(60,'n2')+'</div>';
+ F(m,t);const o={a:0,b:0};t.to(o,{a:900,b:1800,duration:2.4,ease:'power2.out',onUpdate:()=>{$('#n1',m).textContent=Math.round(o.a);$('#n2',m).textContent=Math.round(o.b)}})},
+vs(m,t){m.innerHTML='<div class="card V vl"><span class="vt bad">অস্পষ্ট prompt</span><div class="vp">একটা সুন্দর লোগো বানাও</div><svg viewBox="0 0 400 240"><circle id="vc" cx="150" cy="130" r="50" fill="#CBD5E1"/><text x="260" y="145" font-size="48" fill="#94A3B8" font-family="Space Grotesk,sans-serif">?</text></svg></div><div class="card V vr"><span class="vt good">স্পষ্ট prompt</span><div class="vp">৮ সেকেন্ডের logo reveal, 1920×1080, নীল (#1659F5) আর সাদা, ঝটপট (snappy) গতি, শুধু একটা ফাইল</div><svg viewBox="0 0 400 240"><circle id="rg" cx="200" cy="120" r="80" fill="none" stroke="#1659F5" stroke-width="12" stroke-linecap="round" stroke-dasharray="503" stroke-dashoffset="503" transform="rotate(-90 200 120)"/><circle id="fc" cx="200" cy="120" r="0" fill="#1659F5"/><text id="lt" x="200" y="120" dy=".35em" text-anchor="middle" font-size="90" font-weight="700" fill="#fff" font-family="Space Grotesk,sans-serif" opacity="0">L</text></svg></div>';
+ F(m,t);t.fromTo($('#rg',m),{strokeDashoffset:503},{strokeDashoffset:0,duration:1.3,ease:'power2.inOut'})
+  .fromTo($('#fc',m),{attr:{r:0}},{attr:{r:72},duration:.6,ease:'back.out(1.7)'},'-=.2')
+  .fromTo($('#lt',m),{opacity:0,scale:.3,svgOrigin:'200 120'},{opacity:1,scale:1,svgOrigin:'200 120',duration:.5,ease:'back.out(2)'},'-=.3');
+ t.to($('#vc',m),{attr:{cx:210},duration:1.4,yoyo:true,repeat:-1,ease:'sine.inOut'},1)},
+build(m,t){const P=[['উদ্দেশ্য','লোগো reveal বানাও'],['মাপ','1920×1080, ৮ সেকেন্ড, 30 fps'],['চেহারা','নীল #1659F5 আর সাদা, মোটা অক্ষর'],['গতি','snappy, ০.৮ সেকেন্ড'],['সীমা','শুধু একটা ফাইল']];
+ m.innerHTML='<div class="card L p2">'+P.map((x,k)=>'<div class="rw s fx" id="bp'+k+'"><span>'+x[0]+'</span><code>'+x[1]+'</code></div>').join('')+'</div><div class="card R"><svg viewBox="0 0 400 300"><rect id="b2" x="20" y="40" width="360" height="202" rx="10" fill="none" stroke="#1659F5" stroke-width="3" stroke-dasharray="10 8"/><circle id="b4" cx="200" cy="141" r="70" fill="none" stroke="#E8590C" stroke-width="10" stroke-dasharray="440" stroke-dashoffset="440" transform="rotate(-90 200 141)"/><circle id="b1" cx="200" cy="141" r="60" fill="#CBD5E1"/><text id="b3" x="200" y="141" dy=".35em" text-anchor="middle" font-size="80" font-weight="700" fill="#fff" font-family="Space Grotesk,sans-serif">L</text><g id="b5"><circle cx="350" cy="270" r="22" fill="#12A150"/><path d="M340 270 l8 8 l14 -16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g></svg></div>';
+ F(m,t);const R=k=>$('#bp'+k,m);gsap.set($$('.rw',m),{opacity:.25});gsap.set([$('#b2',m),$('#b3',m),$('#b5',m)],{opacity:0});
+ const row=k=>t.call(()=>{for(let j=0;j<5;j++)R(j).classList.toggle('on',j==k)}).to(R(k),{opacity:1,duration:.4});
+ row(0).to({},{duration:1.2});
+ row(1).to($('#b2',m),{opacity:1,duration:.5}).to({},{duration:1});
+ row(2).to($('#b1',m),{fill:'#1659F5',duration:.5}).to($('#b3',m),{opacity:1,duration:.4},'<.1').to({},{duration:1});
+ row(3).to($('#b4',m),{strokeDashoffset:0,duration:1,ease:'power2.inOut'}).to({},{duration:.4});
+ row(4).fromTo($('#b5',m),{opacity:0,scale:.2,svgOrigin:'350 270'},{opacity:1,scale:1,svgOrigin:'350 270',duration:.5,ease:'back.out(2)'})},
+tmpl(m,t,s){const T=(s&&s.rows)||[['উদ্দেশ্য','[কী বানাচ্ছি, কার জন্য]'],['মাপ','[1920×1080 বা 1080×1920], [কত সেকেন্ড], 30 fps'],['চেহারা','[রং, ফন্ট, ধরন]'],['গতি','[smooth / snappy / bouncy], [কত সেকেন্ড]'],['সীমা','[কী করবে না]'],['আউটপুট','একটা HTML ফাইল, প্রতি অংশে মন্তব্য']];
+ m.innerHTML='<div class="card W2 tp">'+T.map(x=>'<div class="rw s fx"><span>'+x[0]+'</span><code>'+x[1]+'</code></div>').join('')+'</div>';
+ F(m,t);t.fromTo($$('.rw',m),{x:-40,opacity:0},{x:0,opacity:1,duration:.5,stagger:.35,ease:'power2.out'})},
+cmp(m,t){m.innerHTML='<div class="card V vl"><span class="vt bad">সিদ্ধান্ত ছাড়া</span><div class="ds"><div style="font:700 30px serif;color:#E8590C">নতুন কোর্স!!</div><div style="font:900 46px cursive;color:#12A150">50% ছাড়</div><div style="font:400 26px monospace;color:#B42318">আজই ভর্তি হোন</div><div style="font:600 32px sans-serif;color:#7C3AED">★ সীমিত সময় ★</div></div></div><div class="card V vr"><span class="vt good">সিদ্ধান্তসহ</span><div class="ds g"><div style="font:600 36px Hind Siliguri,sans-serif;color:#1659F5">নতুন কোর্স</div><div style="font:700 140px/1 Space Grotesk,sans-serif;color:#0B1F4D">50%</div><div style="font:600 40px Hind Siliguri,sans-serif;color:#0B1F4D">ছাড়, আজই ভর্তি হোন</div></div></div>';
+ F(m,t);t.from($$('.ds.g>div',m),{y:30,opacity:0,stagger:.3,duration:.5});t.to($$('.ds:not(.g)>div',m),{rotation:'random(-5,5)',duration:.7,repeat:-1,yoyo:true,stagger:.12},1)},
+contrast(m,t){const C=[['#FFD84D','#fff',0,'হলুদ লেখা, সাদা জমি'],['#CBD5E1','#fff',0,'হালকা ধূসর লেখা, সাদা জমি'],['#0B1F4D','#fff',1,'গাঢ় নীল লেখা, সাদা জমি'],['#fff','#1659F5',1,'সাদা লেখা, নীল জমি']];
+ m.innerHTML='<div class="cg">'+C.map(c=>'<div class="cb card" style="background:'+c[1]+'"><b style="color:'+c[0]+'">বাংলা লেখা পড়া যায়?</b><em class="'+(c[2]?'ok':'no')+'">'+(c[2]?'✓ পড়া যায়':'✗ পড়তে কষ্ট')+'</em><small>'+c[3]+'</small></div>').join('')+'</div>';
+ F(m,t);t.fromTo($$('.cb',m),{scale:.9,opacity:0},{scale:1,opacity:1,duration:.5,stagger:.5,ease:'back.out(1.6)'})},
+safe(m,t){const f=(x,c,l)=>'<div class="card V '+c+'"><span class="vt '+(c=='vl'?'bad':'good')+'">'+l+'</span><svg viewBox="0 0 400 225">'+x+'</svg></div>',bg='<rect width="400" height="225" fill="#1659F5"/>',tx=(id,x)=>'<text id="'+id+'" x="'+x+'" y="125" font-size="64" font-weight="700" fill="#fff" font-family="Hind Siliguri,sans-serif">বড় অফার</text>';
+ m.innerHTML=f(bg+tx('tx1',-24),'vl','কিনারায় ঠেসে ধরা, কেটে যায়')+f(bg+'<rect x="24" y="24" width="352" height="177" fill="none" stroke="#fff" stroke-opacity=".5" stroke-dasharray="6 6"/>'+tx('tx2',44),'vr','নিরাপদ জায়গার ভেতরে');
+ F(m,t);t.fromTo($('#tx1',m),{x:-60,opacity:0},{x:0,opacity:1,duration:.8,ease:'power3.out'}).fromTo($('#tx2',m),{x:-60,opacity:0},{x:0,opacity:1,duration:.8,ease:'power3.out'},'<')},
+stylecard(m,t){m.innerHTML='<div class="card W2 sc"><div class="sw">'+[['#1659F5','প্রধান'],['#0B1F4D','লেখা'],['#E8590C','জোর']].map(c=>'<div><i style="background:'+c[0]+'"></i><span>'+c[1]+'<br>'+c[0]+'</span></div>').join('')+'</div><div class="sr"><div class="rw s fx"><span>ফন্ট</span><code>বাংলা: Hind Siliguri, ইংরেজি: Space Grotesk</code></div><div class="rw s fx"><span>মেজাজ</span><code>পরিষ্কার, আত্মবিশ্বাসী</code></div><div class="rw s fx"><span>ফাঁকা</span><code>কিনারা থেকে ৮০px</code></div><div class="rw s fx"><span>লেখা</span><code>বড়টা আগে, মোটে ২টা ফন্ট</code></div></div></div>';
+ F(m,t);t.fromTo($$('.sw>div',m),{scale:0,opacity:0},{scale:1,opacity:1,duration:.5,stagger:.25,ease:'back.out(2)'}).fromTo($$('.sr .rw',m),{x:-40,opacity:0},{x:0,opacity:1,duration:.5,stagger:.3})},
+styles(m,t){const S=[['Flat','সমতল রং, ছায়া নেই','background:#fff','<div style="width:110px;height:110px;border-radius:50%;background:#1659F5"></div><div style="width:150px;height:70px;border-radius:14px;background:#E8590C"></div>'],
+['Minimal / Swiss','ফাঁকা জায়গা, মোটা লেখা','background:#F8FAFC;justify-content:flex-start;padding-left:50px','<div><div style="font:700 80px/1 Space Grotesk,sans-serif;color:#0B1F4D">Aa</div><div style="width:80px;height:6px;background:#E11D48;margin-top:10px"></div></div>'],
+['Glassmorphism','ঝাপসা কাচের কার্ড','background:linear-gradient(135deg,#7C3AED,#22D3EE)','<div style="width:260px;height:140px;border-radius:24px;background:rgba(255,255,255,.28);backdrop-filter:blur(10px);border:2px solid rgba(255,255,255,.5)"></div>'],
+['Neo-brutalism','মোটা বর্ডার, উজ্জ্বল রং','background:#FFD84D','<div style="width:240px;height:120px;border:6px solid #000;background:#fff;box-shadow:10px 10px 0 #000"></div>'],
+['Gradient','রং মিশে যায়','background:linear-gradient(135deg,#7C3AED,#F472B6,#FBBF24)','<div style="font:700 80px Space Grotesk,sans-serif;color:#fff">Aa</div>'],
+['Line art','শুধু দাগ','background:#fff','<svg viewBox="0 0 200 100" style="width:240px;height:120px"><circle cx="60" cy="50" r="38" fill="none" stroke="#0B1F4D" stroke-width="4"/><rect x="108" y="16" width="80" height="68" rx="8" fill="none" stroke="#0B1F4D" stroke-width="4"/></svg>']];
+ m.innerHTML='<div class="gal">'+S.map(x=>'<div class="tile" style="'+x[2]+'">'+x[3]+'<b class="nm">'+x[0]+'</b><i class="sd">'+x[1]+'</i></div>').join('')+'</div>';
+ F(m,t);t.from($$('.tile',m),{scale:.85,opacity:0,stagger:.2,duration:.5,ease:'back.out(1.6)'})},
+mstyles(m,t){const N=[['Kinetic','লেখা নড়ে'],['Glitch','ঝিলিক, ভাঙা-ভাঙা'],['Parallax','গভীরতার ভান'],['Particles','ছোট ছোট কণা'],['Liquid','গলে-মেশে']];
+ const A=['<div class="k">'+'RAIN'.split('').map(c=>'<span>'+c+'</span>').join('')+'</div>','<div class="gl"><u>GLITCH</u><u>GLITCH</u><u>GLITCH</u></div>','<div class="px"><i></i><i></i><i></i></div>','<div class="pt">'+'<s></s>'.repeat(14)+'</div>','<div class="lq"></div>'];
+ m.innerHTML='<div class="ms">'+N.map((n,k)=>'<div class="mt"><div class="mv">'+A[k]+'</div><b>'+n[0]+'</b><span>'+n[1]+'</span></div>').join('')+'</div>';
+ $$('.pt s',m).forEach((e,i)=>{e.style.left=(6+i*6.4)+'%'});
+ F(m,t);t.to($$('.k span',m),{y:-40,duration:.4,stagger:.12,yoyo:true,repeat:-1,repeatDelay:.6,ease:'power2.out'},1)
+  .to($('.gl u:nth-child(2)',m),{x:'random(-8,8)',duration:.07,repeat:-1,repeatRefresh:true},1)
+  .to($('.gl u:nth-child(3)',m),{x:'random(-8,8)',duration:.09,repeat:-1,repeatRefresh:true},1)
+  .to($('.px i:nth-child(1)',m),{x:10,duration:1.6,yoyo:true,repeat:-1,ease:'sine.inOut'},1)
+  .to($('.px i:nth-child(2)',m),{x:25,duration:1.6,yoyo:true,repeat:-1,ease:'sine.inOut'},1)
+  .to($('.px i:nth-child(3)',m),{x:45,duration:1.6,yoyo:true,repeat:-1,ease:'sine.inOut'},1)
+  .to($$('.pt s',m),{keyframes:{'0%':{y:0,opacity:0},'20%':{opacity:1},'100%':{y:-170,opacity:0}},duration:2,repeat:-1,ease:'none',delay:i=>i*.14},1)
+  .to($('.lq',m),{borderRadius:'30% 70% 70% 30% / 30% 30% 70% 70%',duration:1.4,yoyo:true,repeat:-1,ease:'sine.inOut'},1)},
+cc(m,t,s){const L=a=>a.map(x=>'<div class="li">'+x+'</div>').join('');
+ m.innerHTML='<div class="card V vl"><span class="vt good">'+((s&&s.gl)||'Claude-এ ভালো হয়')+'</span>'+L((s&&s.good)||['✓ Kinetic typography','✓ Flat 2D, Line art','✓ Minimal / Swiss, Gradient','✓ Glitch, Particles','✓ Infographic, সংখ্যা animation'])+'</div><div class="card V vr"><span class="vt '+((s&&s.bc)||'bad')+'">'+((s&&s.bl)||'কঠিন বা অন্য টুল লাগে')+'</span>'+L((s&&s.bad)||['✗ ক্যামেরায় তোলা ভিডিওর মতো বাস্তব ছবি','✗ হাতে আঁকা চরিত্রের animation','✗ মানুষের মুখের বাস্তব নড়াচড়া','△ ৩D সম্ভব, কিন্তু ফটোর মতো নয়'])+'</div>';
+ F(m,t);t.from($$('.li',m),{x:-30,opacity:0,stagger:.25,duration:.4})},
+ratios(m,t){const R=[['16:9','YouTube','1920×1080',711,400],['9:16','Reel / Story','1080×1920',225,400],['1:1','Feed','1080×1080',400,400]];
+ m.innerHTML='<div class="rt">'+R.map(r=>'<div class="rf"><div class="fr2" style="width:'+r[3]+'px;height:'+r[4]+'px"><i></i></div><b>'+r[0]+'</b><span>'+r[1]+'</span><small>'+r[2]+'</small></div>').join('')+'</div>';
+ F(m,t);t.from($$('.rf',m),{y:40,opacity:0,stagger:.3,duration:.5});const d=$$('.fr2 i',m);
+ t.to(d[0],{x:600,duration:1.8,yoyo:true,repeat:-1,ease:'sine.inOut'}).to(d[1],{y:300,duration:1.8,yoyo:true,repeat:-1,ease:'sine.inOut'},'<').to(d[2],{x:310,duration:1.8,yoyo:true,repeat:-1,ease:'sine.inOut'},'<')},
+seg(m,t){m.innerHTML='<div class="card W2 sg"><div class="bar"><div class="s1">Hook<small>০-৩ সে</small></div><div class="s2">মূল অংশ<small>৩-২৫ সে</small></div><div class="s3">CTA<small>২৫-৩০ সে</small></div><div class="ph"></div></div><div class="nt"><div><b>Hook</b> থামাও</div><div><b>মূল অংশ</b> বোঝাও</div><div><b>CTA</b> বলো কী করতে হবে</div></div></div>';
+ F(m,t);t.fromTo($('.ph',m),{left:'0%'},{left:'100%',duration:6,ease:'none',repeat:-1,repeatDelay:.8})},
+board(m,t){const I={c:'<circle cx="100" cy="60" r="30" fill="#1659F5"/><text x="100" y="72" text-anchor="middle" font-size="40" font-weight="700" fill="#fff">?</text>',r:'<rect x="55" y="30" width="90" height="60" rx="8" fill="#E8590C"/>',l:'<circle cx="100" cy="60" r="34" fill="none" stroke="#1659F5" stroke-width="8"/><path d="M84 60l12 12 22-24" fill="none" stroke="#12A150" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>',b:'<rect x="50" y="64" width="24" height="30" fill="#1659F5"/><rect x="88" y="44" width="24" height="50" fill="#1659F5"/><rect x="126" y="24" width="24" height="70" fill="#12A150"/>',a:'<rect x="40" y="40" width="120" height="44" rx="22" fill="#12A150"/><text x="100" y="70" text-anchor="middle" font-size="26" font-weight="700" fill="#fff">CTA</text>'};
+ const P=[['১','০-৩ সে','Hook: বড় প্রশ্ন','c'],['২','৩-৯ সে','সমস্যা দেখাই','r'],['৩','৯-১৮ সে','সমাধান দেখাই','l'],['৪','১৮-২৫ সে','ফল দেখাই','b'],['৫','২৫-৩০ সে','CTA: কী করবে','a']];
+ m.innerHTML='<div class="card W2 bd">'+P.map(p=>'<div class="pn"><svg viewBox="0 0 200 120">'+I[p[3]]+'</svg><b>'+p[0]+'</b><span>'+p[2]+'</span><small>'+p[1]+'</small></div>').join('')+'</div>';
+ F(m,t);t.from($$('.pn',m),{y:50,opacity:0,stagger:.35,duration:.5,ease:'back.out(1.6)'})},
+ba(m,t,s){const K=s.kind,C=(c,l,x)=>'<div class="card V '+c+'"><span class="vt '+(c=='vl'?'bad':'good')+'">'+l+'</span>'+x+'</div>',sv=x=>'<svg viewBox="0 0 400 225">'+x+'</svg>',bg='<rect width="400" height="225" fill="#EAF3FF"/>';
+ let a,b,la,lb,go;
+ if(K=='speed'){la='আগে: খুব দ্রুত';lb='পরে: ধীরে, ১.২ সেকেন্ড';a=sv(bg+'<circle id="a1" cx="60" cy="112" r="30" fill="#1659F5"/>');b=sv(bg+'<circle id="b1" cx="60" cy="112" r="30" fill="#1659F5"/>');
+  go=()=>{t.fromTo($('#a1',m),{x:0},{x:280,duration:.25,ease:'none',repeat:-1,repeatDelay:1.35},1).fromTo($('#b1',m),{x:0},{x:280,duration:1.2,ease:'power2.inOut',repeat:-1,repeatDelay:.4},1)}}
+ else if(K=='order'){la='আগে: সব একসাথে';lb='পরে: একটার পর একটা';const R=[0,1,2].map(i=>'<rect class="rr" x="60" y="'+(30+i*62)+'" width="280" height="36" rx="10" fill="#1659F5"/>').join('');a=sv(bg+R);b=a;
+  go=()=>{t.fromTo($$('.vl .rr',m),{attr:{width:0}},{attr:{width:280},duration:.6,repeat:-1,repeatDelay:1.4},1).fromTo($$('.vr .rr',m),{attr:{width:0}},{attr:{width:280},duration:.6,stagger:.5,repeat:-1,repeatDelay:1.4},1)}}
+ else if(K=='bn'){la='আগে: অক্ষর ধরে নড়ানো';lb='পরে: শব্দ ধরে নড়ানো';a='<div class="bnw sp"><span>ব</span><span>ৃ</span><span>ষ</span><span>্</span><span>ট</span><span>ি</span></div>';b='<div class="bnw"><span>বৃষ্টি</span></div>';
+  go=()=>{t.to($$('.vl .bnw span',m),{y:i=>[-22,18,-14,22,-18,14][i],duration:.5,yoyo:true,repeat:-1,ease:'sine.inOut'},1).to($$('.vr .bnw span',m),{y:-22,duration:.6,yoyo:true,repeat:-1,ease:'sine.inOut'},1)}}
+ else if(K=='read'){la='আগে: খুব দ্রুত';lb='পরে: পড়ার সময় আছে';a='<div class="rdw"><span id="ra"></span></div>';b='<div class="rdw"><span id="rb"></span></div>';
+  go=()=>{const w=['বৃষ্টি','নামলে','মন','ভালো','হয়'],o={x:0,y:0},u=(id,v)=>{$(id,m).textContent=w[Math.min(4,Math.floor(v))]};
+   t.to(o,{x:5,duration:1.25,ease:'none',repeat:-1,repeatDelay:1,onUpdate:()=>u('#ra',o.x)},1).to(o,{y:5,duration:4.5,ease:'none',repeat:-1,repeatDelay:1,onUpdate:()=>u('#rb',o.y)},1)}}
+ else if(K=='overlay'){la='আগে: লেখা হারিয়ে গেছে';lb='পরে: পেছনে আস্তরণ';const B=['#F59E0B','#10B981','#3B82F6','#EC4899','#FDE047'].map((c,i)=>'<rect x="'+(i*80)+'" width="80" height="225" fill="'+c+'"/>').join(''),T='<text class="tx" x="200" y="130" text-anchor="middle" font-size="54" font-weight="700" fill="#fff" font-family="Hind Siliguri,sans-serif">নতুন চা</text>';
+  a=sv(B+T);b=sv(B+'<rect x="40" y="80" width="320" height="70" rx="12" fill="#0B1F4D" fill-opacity=".65"/>'+T);
+  go=()=>{t.fromTo($$('.tx',m),{opacity:0},{opacity:1,duration:.8,repeat:-1,repeatDelay:1.6},1)}}
+ else{la='আগে: ধীরে শুরু';lb='পরে: প্রথমেই hook';const tm=i=>'<text id="'+i+'" x="388" y="24" text-anchor="end" font-size="20" font-weight="700" fill="#0B1F4D">0.0s</text>';
+  a=sv(bg+'<circle id="ha" cx="200" cy="112" r="50" fill="#1659F5" opacity="0"/>'+tm('ta'));b=sv(bg+'<text id="hb" x="200" y="132" text-anchor="middle" font-size="64" font-weight="700" fill="#1659F5" font-family="Hind Siliguri,sans-serif" opacity="0">৫০% ছাড়</text>'+tm('tb'));
+  go=()=>{const o={s:0};t.to(o,{s:3,duration:3,ease:'none',repeat:-1,repeatDelay:1,onUpdate:()=>{$('#ha',m).setAttribute('opacity',o.s/3);$('#hb',m).setAttribute('opacity',o.s>.2?1:0);$('#ta',m).textContent=$('#tb',m).textContent=o.s.toFixed(1)+'s'}},1)}}
+ m.innerHTML=C('vl',la,a)+C('vr',lb,b);F(m,t);go()},
+rect(m,t){m.innerHTML='<div class="card L"><svg viewBox="0 0 400 300"><rect width="400" height="300" fill="#EAF3FF"/><rect id="rr" fill="#1659F5" rx="12"/></svg></div><div class="card R"><div class="rw f"><code>x="<b id="bx"></b>"</code><span>বাঁ থেকে দূরে</span></div><div class="rw f"><code>y="<b id="by"></b>"</code><span>উপর থেকে দূরে</span></div><div class="rw f"><code>width="<b id="bw"></b>"</code><span>কত চওড়া</span></div><div class="rw f"><code>height="<b id="bh"></b>"</code><span>কত উঁচু</span></div></div>';
+ F(m,t);const o={x:50,y:50,w:160,h:100},u=()=>{at(m,'#rr',{x:o.x,y:o.y,width:o.w,height:o.h});[['x',o.x],['y',o.y],['w',o.w],['h',o.h]].forEach(a=>{$('#b'+a[0],m).textContent=Math.round(a[1])})};u();
+ t.to(o,{x:150,y:100,w:220,h:150,duration:1.8,ease:'power2.inOut',yoyo:true,repeat:-1,repeatDelay:.6,onUpdate:u})},
+steps(m,t){const S=[['M 60 230','কলম রাখো'],['L 200 70','সোজা টানো'],['C 280 70 340 150 340 230','বাঁকা টানো'],['Z','বন্ধ করো']],q='fill="none" stroke="#1659F5" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"';
+ m.innerHTML='<div class="card L"><svg viewBox="0 0 400 300"><path id="s2" d="M60 230 L200 70" '+q+'/><path id="s3" d="M200 70 C280 70 340 150 340 230" '+q+'/><path id="s4" d="M340 230 L60 230" '+q+'/><circle id="pen" cx="60" cy="230" r="13" fill="#E8590C"/></svg></div><div class="card R p2">'+S.map((x,k)=>'<div class="rw s" id="st'+k+'"><code>'+x[0]+'</code><span>'+x[1]+'</span></div>').join('')+'</div>';
+ F(m,t);['#s2','#s3','#s4'].forEach(z=>{const e=$(z,m),l=e.getTotalLength();e.style.strokeDasharray=l;e.style.strokeDashoffset=l});
+ const hl=k=>t.call(()=>{for(let j=0;j<4;j++)$('#st'+j,m).classList.toggle('on',j==k)}),E=[[200,70],[340,230],[60,230]];
+ hl(0);t.to({},{duration:.9});
+ ['#s2','#s3','#s4'].forEach((z,k)=>{hl(k+1);t.to($(z,m),{strokeDashoffset:0,duration:1.3,ease:'power1.inOut'}).to($('#pen',m),{attr:{cx:E[k][0],cy:E[k][1]},duration:1.3,ease:'power1.inOut'},'<')})},
+loop(m,t){let c='';for(let i=0;i<50;i++){const r=i*3.4+10,a=i*.55;c+='<circle cx="'+(200+r*Math.cos(a)).toFixed(1)+'" cy="'+(190+r*Math.sin(a)).toFixed(1)+'" r="9" fill="hsl('+(205+i*1.2)+',90%,55%)"/>'}
+ m.innerHTML='<div class="card L p"><div class="rw"><code>for (let i = 0; i &lt; 50; i++) {<br>&nbsp;&nbsp;drawCircle(i)<br>}</code><span>এই ৩ লাইন ৫০ বার চলে</span></div></div><div class="card R"><svg viewBox="0 0 400 380"><g id="lg">'+c+'</g></svg></div>';
+ F(m,t);t.fromTo($$('#lg circle',m),{attr:{r:0}},{attr:{r:9},duration:.5,stagger:.05,ease:'back.out(2)'})
+  .to($('#lg',m),{rotation:360,svgOrigin:'200 190',duration:14,ease:'none',repeat:-1})}
+};
+const card=c=>'<div class="card lc a">'+(c.n?'<div class="num">'+c.n+'</div>':'')+'<h2>'+c.h+'</h2><p>'+(c.p||'')+'</p>'+(c.s?'<small>'+c.s+'</small>':'')+(c.tag?'<span class="tag">'+c.tag+'</span>':'')+'</div>';
+const R={
+title:s=>'<div class="orb" id="o1"></div><div class="orb" id="o2"></div><div class="orb" id="o3"></div><span class="chip a">'+s.chip+'</span><h1 class="a">'+s.h+'</h1><p class="sub a">'+s.sub+'</p>',
+cards:s=>(s.t?'<h2 class="ttl a">'+s.t+'</h2>':'')+'<div class="cs n'+s.items.length+(s.next?' s':'')+'">'+s.items.map(card).join('')+'</div>'+(s.next?'<div class="card nx a"><small>পরের ক্লাস</small><h2>'+s.next+'</h2></div>':'')+(s.cap?'<p class="cap a">'+s.cap+'</p>':''),
+demo:s=>'<h2 class="ttl a">'+s.t+'</h2><div class="dm"></div>'+(s.cap?'<p class="cap a">'+s.cap+'</p>':'')
+};
+document.title=L.title;
+st.insertAdjacentHTML('afterbegin',L.scenes.map(s=>'<section class="scene">'+R[s.k](s)+'</section>').join(''));
+const sc=$$('.scene');sc.forEach(()=>dots.append(document.createElement('b')));
+function fit(){const s=Math.min(innerWidth/1920,innerHeight/1080);st.style.transform='scale('+s+')';st.style.left=(innerWidth-1920*s)/2+'px';st.style.top=(innerHeight-1080*s)/2+'px'}
+addEventListener('resize',fit);fit();
+let i=-1,cur;
+function go(n){if(n<0||n>=sc.length)return;if(cur)cur.kill();sc.forEach((e,k)=>e.classList.toggle('on',k==n));[...dots.children].forEach((b,k)=>b.classList.toggle('on',k==n));i=n;
+ const s=L.scenes[n],el=sc[n],t=gsap.timeline();sp.textContent=s.say+'\n— '+s.note;
+ t.fromTo($$('.a',el),{y:60,opacity:0},{y:0,opacity:1,duration:.7,stagger:.13,ease:'power3.out'});
+ gsap.set($$('.orb',el),{y:0});if(s.k=='title')t.to($$('.orb',el),{y:'+=34',duration:2.4,yoyo:true,repeat:-1,ease:'sine.inOut',stagger:.35},0);
+ if(s.k=='demo')D[s.d]($('.dm',el),t,s);
+ cur=t}
+document.addEventListener('click',e=>{if(!e.target.closest('input'))go(i+1)});
+addEventListener('keydown',e=>{if([' ','ArrowRight','ArrowDown','Enter'].includes(e.key)){e.preventDefault();go(i+1)}if(['ArrowLeft','ArrowUp','Backspace'].includes(e.key))go(i-1);if(e.key=='s'||e.key=='S')sp.style.display=sp.style.display=='block'?'none':'block'});
+go(0);
+</script></body></html>

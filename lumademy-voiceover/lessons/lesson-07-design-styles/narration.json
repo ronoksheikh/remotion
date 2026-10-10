@@ -1,0 +1,300 @@
+{
+ "slides": [
+  {
+   "text": "আসসালামু আলাইকুম! গত lesson-এ আমরা Style Card বানালাম। আজ তার সবচেয়ে মজার অংশ: ধরন, বা style। ধরুন A.I.-কে বললেন, দেখতে আধুনিক হোক। আধুনিক মানে কী? একেকজনের কাছে একেক রকম। কিন্তু যদি বলেন Minimal, বা Neo-brutalism, একটা শব্দেই A.I. পুরো চেহারাটা বুঝে যায়। কারণ এই নামগুলোর পেছনে হাজার হাজার design-এর একটা পরিচিত pattern আছে। আজ সেই নামগুলো শিখব।",
+   "cues": [
+    {
+     "at": "সবচেয়ে মজার অংশ",
+     "sel": "h1",
+     "dur": 5,
+     "anchor": "br"
+    },
+    {
+     "at": "একটা শব্দেই A.I.",
+     "sel": ".sub",
+     "dur": 7,
+     "anchor": "br"
+    }
+   ]
+  },
+  {
+   "text": "প্রথমে চেহারার ছয়টা ধরন। Flat: সমতল রং, কোনো ছায়া নেই, পরিষ্কার আর সহজ। Minimal বা Swiss: অনেক ফাঁকা জায়গা, মোটা লেখা, অল্প রং। Glassmorphism: ঝাপসা কাচের মতো স্বচ্ছ card, পেছনে রঙিন আলো। Neo-brutalism: মোটা কালো border, শক্ত ছায়া, উজ্জ্বল রং, একটু কাঁচা আর সাহসী। Gradient: এক রং ধীরে ধীরে আরেক রং-এ মিশে যায়। আর Line art: শুধু দাগ দিয়ে আঁকা, হালকা আর পরিষ্কার। ছবি আর নাম একসাথে মনে রাখুন।",
+   "cues": [
+    {
+     "at": "Flat:",
+     "sel": ".gal .tile:nth-child(1)",
+     "dur": 4
+    },
+    {
+     "at": "Minimal বা Swiss",
+     "sel": ".gal .tile:nth-child(2)",
+     "dur": 4
+    },
+    {
+     "at": "Glassmorphism:",
+     "sel": ".gal .tile:nth-child(3)",
+     "dur": 4
+    },
+    {
+     "at": "Neo-brutalism:",
+     "sel": ".gal .tile:nth-child(4)",
+     "dur": 5
+    },
+    {
+     "at": "Gradient:",
+     "sel": ".gal .tile:nth-child(5)",
+     "dur": 3.5
+    },
+    {
+     "at": "আর Line art:",
+     "sel": ".gal .tile:nth-child(6)",
+     "dur": 3.5
+    },
+    {
+     "at": "ছবি আর নাম",
+     "sel": ".gal",
+     "dur": 4,
+     "anchor": "br"
+    }
+   ]
+  },
+  {
+   "text": "এবার দেখুন নামের আসল শক্তি। একই কথা: নতুন কোর্স, পঞ্চাশ শতাংশ ছাড়। শুধু ধরনের নাম বদলালাম। Minimal-এ শান্ত, পরিষ্কার, বিশ্বাসযোগ্য। Neo-brutalism-এ জোরে চিৎকার করছে, তরুণ আর মজার। আর Glassmorphism-এ ঝকঝকে, premium, tech-এর মতো। কথা একই, শুধু একটা শব্দ বদলেই পুরো অনুভূতি বদলে গেল। তাই prompt-এ লম্বা বর্ণনা না লিখে, সঠিক নামটা বলুন।",
+   "sync": [
+    {
+     "tl": 1.4,
+     "t": 1.6
+    },
+    {
+     "tl": 1.5,
+     "at": "Minimal-এ শান্ত"
+    },
+    {
+     "tl": 2.1,
+     "at": "Minimal-এ শান্ত",
+     "shift": 0.6
+    },
+    {
+     "tl": 2.5,
+     "at": "Neo-brutalism-এ"
+    },
+    {
+     "tl": 3.1,
+     "at": "Neo-brutalism-এ",
+     "shift": 0.6
+    },
+    {
+     "tl": 3.5,
+     "at": "Glassmorphism-এ"
+    },
+    {
+     "tl": 4.1,
+     "at": "Glassmorphism-এ",
+     "shift": 0.6
+    }
+   ],
+   "cues": [
+    {
+     "at": "Minimal-এ শান্ত",
+     "sel": ".z3c:nth-child(1)",
+     "dur": 4,
+     "anchor": "br"
+    },
+    {
+     "at": "Neo-brutalism-এ",
+     "sel": ".z3c:nth-child(2)",
+     "dur": 4,
+     "anchor": "br"
+    },
+    {
+     "at": "Glassmorphism-এ",
+     "sel": ".z3c:nth-child(3)",
+     "dur": 4,
+     "anchor": "br"
+    },
+    {
+     "at": "কথা একই",
+     "sel": ".cap",
+     "dur": 7,
+     "anchor": "br"
+    }
+   ]
+  },
+  {
+   "text": "এগুলো ছিল চেহারার ধরন। কিন্তু নড়াচড়ারও ধরন আছে। Kinetic: লেখা নিজেই নাচে, প্রতিটা অক্ষর আলাদা করে নড়ে। Glitch: ঝিলিক দিয়ে ভাঙা-ভাঙা, যেন TV-র signal কেটে যাচ্ছে। Parallax: সামনের জিনিস বেশি নড়ে, পেছনেরটা কম, তাই গভীরতা মনে হয়। Particles: ছোট ছোট কণা ভেসে বেড়ায়। আর Liquid: আকার যেন গলে গিয়ে আরেক আকারে মিশে যায়। চেহারা আর নড়াচড়া, দুটো আলাদা করে বলা যায়। যেমন: Minimal চেহারা, Kinetic গতি।",
+   "cues": [
+    {
+     "at": "Kinetic:",
+     "sel": ".ms .mt:nth-child(1)",
+     "dur": 5
+    },
+    {
+     "at": "Glitch:",
+     "sel": ".ms .mt:nth-child(2)",
+     "dur": 5
+    },
+    {
+     "at": "Parallax:",
+     "sel": ".ms .mt:nth-child(3)",
+     "dur": 5
+    },
+    {
+     "at": "Particles:",
+     "sel": ".ms .mt:nth-child(4)",
+     "dur": 3
+    },
+    {
+     "at": "আর Liquid:",
+     "sel": ".ms .mt:nth-child(5)",
+     "dur": 4
+    },
+    {
+     "at": "চেহারা আর নড়াচড়া, দুটো",
+     "sel": ".cap",
+     "dur": 7,
+     "anchor": "br"
+    }
+   ]
+  },
+  {
+   "text": "কোন ধরনটা নেবেন, কীভাবে বুঝবেন? নিয়ম হলো: আগে মেজাজ, তারপর ধরন। নিজেকে জিজ্ঞেস করুন, দর্শক দেখে কী অনুভব করুক? বিশ্বাস চাইলে, যেমন অফিস বা bank, Minimal বা Flat। তরুণ আর মজার কিছু হলে Neo-brutalism, সাথে bouncy গতি। tech বা premium কিছু হলে Glassmorphism বা Gradient। কিছু শেখাতে বা বোঝাতে চাইলে Flat আর Line art। আর Reel-এ উত্তেজনা চাইলে Kinetic typography বা Glitch। একটা ছোট পরামর্শ: একসাথে দুটোর বেশি ধরন মেশাবেন না, নইলে আবার সেই বাজারের হট্টগোল।",
+   "cues": [
+    {
+     "at": "আগে মেজাজ, তারপর",
+     "sel": ".cap",
+     "dur": 4,
+     "anchor": "br"
+    },
+    {
+     "at": "বিশ্বাস চাইলে",
+     "sel": ".tp .rw:nth-child(1)",
+     "dur": 4
+    },
+    {
+     "at": "তরুণ আর মজার",
+     "sel": ".tp .rw:nth-child(2)",
+     "dur": 4
+    },
+    {
+     "at": "tech বা premium",
+     "sel": ".tp .rw:nth-child(3)",
+     "dur": 4
+    },
+    {
+     "at": "শেখাতে বা বোঝাতে",
+     "sel": ".tp .rw:nth-child(4)",
+     "dur": 4
+    },
+    {
+     "at": "উত্তেজনা চাইলে",
+     "sel": ".tp .rw:nth-child(5)",
+     "dur": 4
+    },
+    {
+     "at": "দুটোর বেশি ধরন",
+     "sel": ".W2",
+     "dur": 6,
+     "anchor": "br"
+    }
+   ]
+  },
+  {
+   "text": "এবার একটা সৎ কথা। সব ধরন সমান ভালো হয় না। এই course-এ আমরা Claude-এর মতো A.I. দিয়ে code লিখিয়ে video বানাই। এভাবে বাঁয়ের জিনিসগুলো খুব ভালো হয়: Kinetic typography, Flat আর Line art, Minimal, Gradient, Glitch, Particles, আর সংখ্যার animation। কিন্তু ডানের জিনিসগুলো কঠিন: ক্যামেরায় তোলা video-র মতো বাস্তব ছবি, হাতে আঁকা কার্টুন চরিত্রের animation, বা মানুষের মুখের বাস্তব নড়াচড়া। এগুলোর জন্য অন্য tool লাগে। থ্রি-ডি সম্ভব, কিন্তু photo-র মতো বাস্তব নয়। এটা আগে থেকে জানা থাকলে আপনি হতাশ হবেন না, আর ঠিক কাজে ঠিক tool নেবেন।",
+   "cues": [
+    {
+     "at": "বাঁয়ের জিনিসগুলো",
+     "sel": ".vl",
+     "dur": 12,
+     "anchor": "br"
+    },
+    {
+     "at": "ক্যামেরায় তোলা",
+     "sel": ".vr .li:nth-child(2)",
+     "dur": 3,
+     "anchor": "br"
+    },
+    {
+     "at": "হাতে আঁকা",
+     "sel": ".vr .li:nth-child(3)",
+     "dur": 3,
+     "anchor": "br"
+    },
+    {
+     "at": "মানুষের মুখের",
+     "sel": ".vr .li:nth-child(4)",
+     "dur": 4,
+     "anchor": "br"
+    },
+    {
+     "at": "থ্রি-ডি সম্ভব",
+     "sel": ".vr .li:nth-child(5)",
+     "dur": 4,
+     "anchor": "br"
+    },
+    {
+     "at": "আগে থেকে জানা",
+     "sel": ".cap",
+     "dur": 6,
+     "anchor": "br"
+    }
+   ]
+  },
+  {
+   "text": "এখন দেখুন, নামগুলো prompt-এ কীভাবে বসে। ধরন: logo reveal, আট second। স্টাইল: Minimal বা Swiss। গতি: snappy, আর kinetic typography। রং: Flat, মাত্র দুটো রং। লম্বা বর্ণনা নেই, শুধু নাম। আর এই কয়েকটা নামেই A.I. পুরো চেহারা আর গতিটা বুঝে নেয়।",
+   "cues": [
+    {
+     "at": "ধরন: logo",
+     "sel": ".tp .rw:nth-child(1)",
+     "dur": 3
+    },
+    {
+     "at": "স্টাইল: Minimal",
+     "sel": ".tp .rw:nth-child(2)",
+     "dur": 3
+    },
+    {
+     "at": "গতি: snappy",
+     "sel": ".tp .rw:nth-child(3)",
+     "dur": 3.5
+    },
+    {
+     "at": "রং: Flat",
+     "sel": ".tp .rw:nth-child(4)",
+     "dur": 3
+    },
+    {
+     "at": "লম্বা বর্ণনা নেই",
+     "sel": ".cap",
+     "dur": 7,
+     "anchor": "br"
+    }
+   ]
+  },
+  {
+   "text": "তাহলে আজ কী শিখলাম? এক: ধরনের নাম জানলে একটা শব্দেই A.I. পুরো চেহারা বোঝে। দুই: চেহারার ধরন আর নড়াচড়ার ধরন আলাদা, দুটোই বলা যায়, আর আগে মেজাজ ঠিক করে তারপর ধরন বাছবেন। আর তিন: code দিয়ে সব ধরন সমান ভালো হয় না, সেটা জেনে রাখা। পরের lesson-এ শিখব video-র ধরন আর মাপ: Reel, YouTube, আর কোনটা কখন।",
+   "cues": [
+    {
+     "at": "এক: ধরনের",
+     "sel": ".cs .lc:nth-child(1)",
+     "dur": 6
+    },
+    {
+     "at": "দুই: চেহারার",
+     "sel": ".cs .lc:nth-child(2)",
+     "dur": 8
+    },
+    {
+     "at": "আর তিন: code",
+     "sel": ".cs .lc:nth-child(3)",
+     "dur": 5
+    },
+    {
+     "at": "পরের lesson-এ",
+     "sel": ".nx",
+     "dur": 8,
+     "anchor": "br"
+    }
+   ]
+  }
+ ]
+}
